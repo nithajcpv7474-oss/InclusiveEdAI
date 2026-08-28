@@ -62,10 +62,10 @@ export default function Header() {
                 {/* Logged in Navigation */}
                 <Link
                   to="/dashboard"
-                  className={`flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 hover:scale-[1.01] ${
                     location.pathname === '/dashboard'
-                      ? 'bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-400'
-                      : 'text-slate-600 dark:text-slate-350 hover:bg-slate-100/80 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-500/10'
+                      : 'text-slate-605 dark:text-slate-350 hover:bg-slate-105 dark:hover:bg-slate-850 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   <LayoutDashboard className="w-4 h-4" />
@@ -74,10 +74,10 @@ export default function Header() {
 
                 <Link
                   to="/new-lesson"
-                  className={`flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 hover:scale-[1.01] ${
                     location.pathname === '/new-lesson'
-                      ? 'bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-400'
-                      : 'text-slate-600 dark:text-slate-350 hover:bg-slate-100/80 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-500/10'
+                      : 'text-slate-605 dark:text-slate-350 hover:bg-slate-105 dark:hover:bg-slate-850 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   <PlusCircle className="w-4 h-4" />
@@ -86,10 +86,10 @@ export default function Header() {
 
                 <Link
                   to="/settings"
-                  className={`flex items-center gap-2 px-3.5 py-2 text-xs font-bold rounded-xl transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 hover:scale-[1.01] ${
                     location.pathname === '/settings'
-                      ? 'bg-indigo-500/10 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-400'
-                      : 'text-slate-600 dark:text-slate-350 hover:bg-slate-100/80 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-500/10'
+                      : 'text-slate-605 dark:text-slate-350 hover:bg-slate-105 dark:hover:bg-slate-850 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
                   <Settings className="w-4 h-4" />
