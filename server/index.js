@@ -970,7 +970,7 @@ app.get('/health', (req, res) => {
 
 // Start the Express server only if not in a Vercel serverless environment
 if (process.env.VERCEL !== '1') {
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`=========================================`);
     console.log(`sensusai AI Backend Running on Port ${PORT}`);
     console.log(`Health Check: http://localhost:${PORT}/health`);

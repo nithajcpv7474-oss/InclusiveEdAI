@@ -25,16 +25,20 @@ The SensusAI workspace has been fully overhauled. We have introduced a premium v
 * **Routing Rules:** Configured [`vercel.json`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/vercel.json) to rewrite all `/api/*` requests to `/api/index.js` and keep standard routes pointing to `/index.html` for single-page routing.
 * **Dev Server Proxy:** Configured [`vite.config.js`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/vite.config.js) to redirect `/api` requests to `http://localhost:5000` locally, allowing seamless relative API pathing `/api/*` across both localhost and Vercel.
 
-### 5. Creation Studio Page (New Lecture)
+### 5. Advanced Frontend Error Handling
+* **Failed to Fetch Interceptor:** Added connection status interceptors inside [`NewLessonPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/NewLessonPage.jsx) and [`AccessibilityResultPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/AccessibilityResultPage.jsx) to intercept browser `Failed to Fetch` network exceptions.
+* **Helpful Error Messages:** The UI now displays a detailed explanation instructing the user on how to resolve the network block (by checking their local connection, ensuring local backend server is running on port 5000, or performing a Hard Reload `Ctrl+F5` to clear browser cache on Vercel).
+
+### 6. Creation Studio Page (New Lecture)
 * **Visual Header:** Rewrote [`NewLessonPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/NewLessonPage.jsx) heading section to use a premium, light-mode gradient banner.
 * **Upload Card Container:** Overhauled the upload interface to feature dashed indigo boundaries and custom glowing hover effects.
 * **Action CTAs:** Rebranded form action controls to say `"Generate Learning Experience"` styled with a responsive color-gradient.
 
-### 6. Settings Center
+### 7. Settings Center
 * **Responsive Layout System:** Converted the long-scrolling form into a premium two-column workspace panel in [`SettingsPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/SettingsPage.jsx) featuring vertical/responsive sidebar navigation.
 * **Category Tabs:** Organized preferences into focused visual tabs (Profile, Accessibility, Learning Styles, Audio Reader, Appearance, Language, Notifications) complete with icons and active states.
 
-### 7. Interactive Workbench (Accessibility Result Page)
+### 8. Interactive Workbench (Accessibility Result Page)
 * **Backdrop Ambient Glow:** Injected absolute gradient blur circles into [`AccessibilityResultPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/AccessibilityResultPage.jsx).
 * **Navigation Action Tabs:** Rewrote segment selectors (Simple Notes, Original Script, Translation, Take Quiz) to display our signature gradient backdrop when active.
 
