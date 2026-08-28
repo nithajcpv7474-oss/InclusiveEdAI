@@ -78,7 +78,7 @@ export default function SettingsPage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-205/60 dark:border-slate-850 pb-6">
           <div className="space-y-1 text-left">
             <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-              <Sliders className="w-8 h-8 text-indigo-650 dark:text-indigo-400" />
+              <Sliders className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
               Workspace Settings
             </h1>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
@@ -110,7 +110,7 @@ export default function SettingsPage() {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-3 px-4.5 py-3 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-200 whitespace-nowrap cursor-pointer shrink-0 w-full text-left ${
                     isActive
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/15'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/15'
                       : 'text-slate-550 dark:text-slate-400 hover:bg-slate-100/80 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -309,7 +309,7 @@ export default function SettingsPage() {
                             onClick={() => updateSetting('appearance', 'theme', opt.value)}
                             className={`flex-1 sm:flex-none px-4.5 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer ${
                               settings.appearance.theme === opt.value
-                                ? 'bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
+                                ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
                                 : 'text-slate-500 hover:text-slate-800 dark:text-slate-450 dark:hover:text-slate-250'
                             }`}
                           >
@@ -332,7 +332,7 @@ export default function SettingsPage() {
                             onClick={() => updateSetting('appearance', 'fontSize', opt.value)}
                             className={`flex-1 sm:flex-none px-4.5 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer ${
                               settings.appearance.fontSize === opt.value
-                                ? 'bg-white dark:bg-slate-800 text-indigo-655 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
+                                ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
                                 : 'text-slate-500 hover:text-slate-800 dark:text-slate-450 dark:hover:text-slate-250'
                             }`}
                           >
@@ -457,7 +457,7 @@ export default function SettingsPage() {
               <div className="flex justify-end pt-4 border-t border-slate-150 dark:border-slate-850/80">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-indigo-600 via-purple-650 to-indigo-600 hover:scale-[1.01] active:scale-[0.98] text-white text-xs font-black uppercase tracking-wider rounded-2xl transition-all shadow-lg shadow-indigo-650/15 flex items-center justify-center gap-1.5 focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 hover:scale-[1.01] active:scale-[0.98] text-white text-xs font-black uppercase tracking-wider rounded-2xl transition-all shadow-lg shadow-indigo-500/15 flex items-center justify-center gap-1.5 focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer"
                 >
                   <Save className="w-4 h-4" />
                   <span>Save Preferences</span>

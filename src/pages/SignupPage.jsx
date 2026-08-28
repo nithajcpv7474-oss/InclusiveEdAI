@@ -224,7 +224,7 @@ export default function SignupPage() {
                     id="show-pass"
                     checked={showPassword}
                     onChange={() => setShowPassword(!showPassword)}
-                    className="rounded border-slate-300 text-indigo-650 focus:ring-indigo-500"
+                    className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
                   />
                   <label htmlFor="show-pass" className="text-xs text-slate-500 dark:text-slate-450 cursor-pointer">
                     Show Password
@@ -279,7 +279,7 @@ export default function SignupPage() {
                       }`}
                     >
                       <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 ${
-                        isSelected ? 'bg-indigo-600 border-indigo-650 text-white' : 'border-slate-300 dark:border-slate-700 bg-white'
+                        isSelected ? 'bg-indigo-600 border-indigo-600 text-white' : 'border-slate-300 dark:border-slate-700 bg-white'
                       }`}>
                         {isSelected && <Check className="w-3.5 h-3.5" />}
                       </div>

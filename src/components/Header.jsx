@@ -35,7 +35,7 @@ export default function Header() {
       role="banner"
     >
       {/* Visual Accent top bar */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 animate-pulse-slow"></div>
+      <div className="h-[3px] w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 animate-pulse-slow"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -50,7 +50,7 @@ export default function Header() {
               alt="SensusAI Logo" 
               className="h-8.5 w-8.5 rounded-xl object-contain hover:scale-[1.02] transition-transform"
             />
-            <span className="text-lg font-black tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-650 bg-clip-text text-transparent">
+            <span className="text-lg font-black tracking-tight bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               SensusAI
             </span>
           </Link>
@@ -64,7 +64,7 @@ export default function Header() {
                   to="/dashboard"
                   className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 hover:scale-[1.01] ${
                     location.pathname === '/dashboard'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-500/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-605 dark:text-slate-350 hover:bg-slate-105 dark:hover:bg-slate-850 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -76,7 +76,7 @@ export default function Header() {
                   to="/new-lesson"
                   className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 hover:scale-[1.01] ${
                     location.pathname === '/new-lesson'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-500/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-605 dark:text-slate-350 hover:bg-slate-105 dark:hover:bg-slate-850 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -88,7 +88,7 @@ export default function Header() {
                   to="/settings"
                   className={`flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 hover:scale-[1.01] ${
                     location.pathname === '/settings'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-500/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-605 dark:text-slate-350 hover:bg-slate-105 dark:hover:bg-slate-850 hover:text-slate-900 dark:hover:text-white'
                   }`}
                 >
@@ -119,7 +119,7 @@ export default function Header() {
                       aria-label="Quick accessibility settings panel"
                     >
                       <div className="border-b border-slate-100 dark:border-slate-850 pb-2">
-                        <span className="text-[10px] font-black text-indigo-650 dark:text-indigo-400 uppercase tracking-widest block">Quick settings</span>
+                        <span className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest block">Quick settings</span>
                         <h4 className="text-xs font-extrabold text-slate-850 dark:text-slate-200">Accessibility Preferences</h4>
                       </div>
                       
@@ -165,7 +165,7 @@ export default function Header() {
                         <Link
                           to="/settings"
                           onClick={() => setShowQuickSettings(false)}
-                          className="text-[10px] font-black text-indigo-655 dark:text-indigo-400 hover:underline uppercase tracking-wider block"
+                          className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 hover:underline uppercase tracking-wider block"
                         >
                           Configure All Settings
                         </Link>

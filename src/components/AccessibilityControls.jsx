@@ -40,7 +40,7 @@ export default function AccessibilityControls() {
         aria-label="Toggle accessibility menu"
         aria-expanded={isOpen}
       >
-        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-500 to-purple-650 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+        <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
         <Settings className={`w-4 h-4 relative z-10 ${isOpen ? 'rotate-90' : 'animate-spin-slow'} transition-transform duration-500`} />
         <span className="relative z-10">Display Helper</span>
       </button>
@@ -64,7 +64,7 @@ export default function AccessibilityControls() {
             <div className="flex items-center gap-2">
               <button
                 onClick={resetSettings}
-                className="p-1.5 hover:bg-slate-150 dark:hover:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-650 transition-colors flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+                className="p-1.5 hover:bg-slate-150 dark:hover:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 hover:text-indigo-600 transition-colors flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider cursor-pointer"
                 title="Reset accessibility options"
                 aria-label="Reset accessibility settings"
               >
@@ -95,7 +95,7 @@ export default function AccessibilityControls() {
                     onClick={() => setFontSize(size.key)}
                     className={`py-2.5 px-1 rounded-xl border flex flex-col items-center justify-center transition-all focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer ${
                       fontSize === size.key
-                        ? 'bg-indigo-600 border-transparent text-white shadow-md shadow-indigo-650/10 scale-[1.03]'
+                        ? 'bg-indigo-600 border-transparent text-white shadow-md shadow-indigo-500/10 scale-[1.03]'
                         : 'bg-slate-50 border-slate-200/60 dark:bg-slate-850 dark:border-slate-800 text-slate-755 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                     }`}
                     title={size.desc}
@@ -138,7 +138,7 @@ export default function AccessibilityControls() {
                     aria-label={`Apply ${tint.label} theme tint`}
                   >
                     <span>{tint.label}</span>
-                    {themeTint === tint.key && <Check className="w-3 h-3 text-indigo-650" />}
+                    {themeTint === tint.key && <Check className="w-3 h-3 text-indigo-600" />}
                   </button>
                 ))}
               </div>

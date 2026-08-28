@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
               Making learning more accessible, understandable, and inclusive with AI.
             </p>
-            <span className="text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent block pt-1">
+            <span className="text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-transparent block pt-1">
               SensusAI — Learn Without Limits
             </span>
           </div>
@@ -30,28 +30,28 @@ export default function Footer() {
           <div className="text-left">
             <h4 className="text-[10px] font-black text-slate-455 dark:text-slate-500 uppercase tracking-widest mb-3">Product</h4>
             <ul className="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-350">
-              <li><Link to="/dashboard" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Accessibility Options</Link></li>
-              <li><Link to="/dashboard" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Easy Read Summary</Link></li>
-              <li><Link to="/dashboard" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Lecture Translation</Link></li>
-              <li><Link to="/dashboard" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Text-to-Speech</Link></li>
+              <li><Link to="/dashboard" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Accessibility Options</Link></li>
+              <li><Link to="/dashboard" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Easy Read Summary</Link></li>
+              <li><Link to="/dashboard" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Lecture Translation</Link></li>
+              <li><Link to="/dashboard" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Text-to-Speech</Link></li>
             </ul>
           </div>
 
           <div className="text-left">
             <h4 className="text-[10px] font-black text-slate-455 dark:text-slate-500 uppercase tracking-widest mb-3">Accessibility</h4>
             <ul className="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-350">
-              <li><Link to="/settings" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Dyslexia Support</Link></li>
-              <li><Link to="/settings" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">ADHD-Friendly Reading</Link></li>
-              <li><Link to="/settings" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Language Support</Link></li>
-              <li><Link to="/settings" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">WCAG Accessibility</Link></li>
+              <li><Link to="/settings" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Dyslexia Support</Link></li>
+              <li><Link to="/settings" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">ADHD-Friendly Reading</Link></li>
+              <li><Link to="/settings" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Language Support</Link></li>
+              <li><Link to="/settings" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">WCAG Accessibility</Link></li>
             </ul>
           </div>
 
           <div className="text-left">
             <h4 className="text-[10px] font-black text-slate-455 dark:text-slate-500 uppercase tracking-widest mb-3">Legal</h4>
             <ul className="space-y-2 text-xs font-bold text-slate-600 dark:text-slate-350">
-              <li><a href="#" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-indigo-655 dark:hover:text-indigo-400 transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Terms of Service</a></li>
             </ul>
           </div>
         </div>

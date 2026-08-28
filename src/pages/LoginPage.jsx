@@ -213,7 +213,7 @@ export default function LoginPage() {
           <div className="text-center pt-2">
             <span className="text-xs font-bold text-slate-500 dark:text-slate-450">
               Don't have an account?{' '}
-              <Link to="/signup" className="text-indigo-655 dark:text-indigo-400 font-extrabold hover:underline">
+              <Link to="/signup" className="text-indigo-600 dark:text-indigo-400 font-extrabold hover:underline">
                 Create account
               </Link>
             </span>

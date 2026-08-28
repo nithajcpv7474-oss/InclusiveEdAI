@@ -528,7 +528,7 @@ ${originalText}
     if (!quizData) {
       return (
         <div className="py-12 text-center max-w-md mx-auto space-y-6">
-          <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 flex items-center justify-center mx-auto shadow-inner">
+          <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mx-auto shadow-inner">
             <HelpCircle className="w-8 h-8" />
           </div>
           <div className="space-y-2">
@@ -539,7 +539,7 @@ ${originalText}
           </div>
           <button
             onClick={handleGenerateQuiz}
-            className="px-6 py-3 bg-indigo-650 hover:bg-indigo-700 text-white font-bold rounded-2xl text-xs uppercase tracking-wider transition-all hover:scale-[1.02] cursor-pointer"
+            className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl text-xs uppercase tracking-wider transition-all hover:scale-[1.02] cursor-pointer"
           >
             Start Quiz Generation
           </button>
@@ -551,7 +551,7 @@ ${originalText}
       <div className="space-y-8 max-h-[60vh] overflow-y-auto pr-2 pb-6">
         <div className="bg-indigo-505/5 border border-indigo-500/10 p-5 rounded-3xl flex items-center justify-between gap-4">
           <div>
-            <h4 className="font-extrabold text-sm text-indigo-655 dark:text-indigo-400">Interactive Lecture Quiz</h4>
+            <h4 className="font-extrabold text-sm text-indigo-600 dark:text-indigo-400">Interactive Lecture Quiz</h4>
             <p className="text-[10px] text-slate-500 dark:text-slate-400">Complete the questions below to test your memory.</p>
           </div>
           {showQuizResults && (
@@ -581,7 +581,7 @@ ${originalText}
 
                     let btnClass = "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/80";
                     if (isSelected) {
-                      btnClass = "bg-indigo-50 border-indigo-300 dark:bg-indigo-950/40 dark:border-indigo-805 text-indigo-650 dark:text-indigo-300 ring-2 ring-indigo-500/20";
+                      btnClass = "bg-indigo-50 border-indigo-300 dark:bg-indigo-950/40 dark:border-indigo-805 text-indigo-600 dark:text-indigo-300 ring-2 ring-indigo-500/20";
                     }
                     if (showQuizResults) {
                       if (isCorrectOption) {
@@ -615,7 +615,7 @@ ${originalText}
                   <div className="pt-3 border-t border-slate-100 dark:border-slate-850 flex flex-col gap-2">
                     <button
                       onClick={() => handleToggleExplanation(qIdx)}
-                      className="text-[10px] font-black text-indigo-655 dark:text-indigo-400 hover:underline uppercase tracking-wider flex items-center gap-1.5 justify-start cursor-pointer"
+                      className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 hover:underline uppercase tracking-wider flex items-center gap-1.5 justify-start cursor-pointer"
                     >
                       <span>{showQuizExplanation[qIdx] ? 'Hide Explanation' : 'Show Explanation'}</span>
                     </button>
@@ -807,7 +807,7 @@ ${originalText}
                       e.stopPropagation(); // Avoid triggering sentence reading
                       setActiveVocabWord(item);
                     }}
-                    className="underline decoration-indigo-400 decoration-2 underline-offset-2 hover:bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 font-extrabold transition-colors px-0.5 rounded cursor-help"
+                    className="underline decoration-indigo-400 decoration-2 underline-offset-2 hover:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-extrabold transition-colors px-0.5 rounded cursor-help"
                     aria-label={`Vocabulary word: ${word}`}
                   >
                     {part}
@@ -882,7 +882,7 @@ ${originalText}
           <div className="flex flex-col gap-3">
             <button
               onClick={handleLoadDemo}
-              className="w-full py-3.5 bg-indigo-650 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-xl shadow-indigo-600/10 hover:scale-[1.01] transition-transform text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-xl shadow-indigo-600/10 hover:scale-[1.01] transition-transform text-xs uppercase tracking-wider flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4" />
               <span>Load In-Context Demo File</span>
@@ -917,7 +917,7 @@ ${originalText}
           <span>Transform another lecture</span>
         </Link>
 
-        <div className="flex items-center gap-2 px-3.5 py-1.5 bg-indigo-500/10 text-indigo-650 dark:text-indigo-455 border border-indigo-500/25 rounded-full text-[10px] font-black uppercase tracking-wider">
+        <div className="flex items-center gap-2 px-3.5 py-1.5 bg-indigo-500/10 text-indigo-600 dark:text-indigo-455 border border-indigo-500/25 rounded-full text-[10px] font-black uppercase tracking-wider">
           <Info className="w-3.5 h-3.5 text-indigo-500" />
           <span>Ingested Assets Hydrated</span>
         </div>
@@ -936,7 +936,7 @@ ${originalText}
           {hasMedia && mediaUrl && (
             <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/60 dark:border-slate-800/60 shadow-md space-y-4">
               <h2 className="text-xs font-black text-slate-455 dark:text-slate-400 uppercase tracking-widest flex items-center gap-2.5">
-                <Activity className="w-4.5 h-4.5 text-indigo-650 dark:text-indigo-400 animate-pulse" />
+                <Activity className="w-4.5 h-4.5 text-indigo-600 dark:text-indigo-400 animate-pulse" />
                 Lecture Media Player
               </h2>
               
@@ -1023,7 +1023,7 @@ ${originalText}
                 className={`w-12 h-12 rounded-full flex items-center justify-center text-white transition-all shadow-lg focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none ${
                   isPlaying && !isPaused
                     ? 'bg-amber-500 hover:bg-amber-600 shadow-amber-500/10'
-                    : 'bg-indigo-600 hover:bg-indigo-755 shadow-indigo-650/15'
+                    : 'bg-indigo-600 hover:brightness-110 shadow-indigo-500/15'
                 }`}
                 title={isPlaying && !isPaused ? "Pause Audio" : "Play/Resume Audio"}
                 aria-label={isPlaying && !isPaused ? "Pause transcript reading" : "Read transcript out loud"}
@@ -1097,7 +1097,7 @@ ${originalText}
 
             {activeVocabWord ? (
               <div className="bg-indigo-500/5 dark:bg-indigo-500/10 border border-indigo-500/20 p-4.5 rounded-2xl space-y-2 animate-in zoom-in-95 duration-150">
-                <span className="text-xs font-black text-indigo-650 dark:text-indigo-400 uppercase tracking-wider block">
+                <span className="text-xs font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block">
                   {activeVocabWord.word}
                 </span>
                 <p className="text-xs text-slate-650 dark:text-slate-300 leading-relaxed font-medium">
@@ -1130,7 +1130,7 @@ ${originalText}
                   onClick={() => { setActiveTab('simple'); handleStop(); }}
                   className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'simple'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
@@ -1142,7 +1142,7 @@ ${originalText}
                   onClick={() => { setActiveTab('original'); handleStop(); }}
                   className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'original'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
@@ -1154,7 +1154,7 @@ ${originalText}
                   onClick={() => { setActiveTab('translated'); handleStop(); }}
                   className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'translated'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
@@ -1166,7 +1166,7 @@ ${originalText}
                   onClick={() => { setActiveTab('quiz'); handleStop(); }}
                   className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'quiz'
-                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-500/10'
                       : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
@@ -1203,7 +1203,7 @@ ${originalText}
               {/* Viewport Meta / Controls */}
               <div className="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-100 dark:border-slate-850 pb-4 mb-6 gap-3">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                  <span className="text-[10px] font-black text-indigo-655 dark:text-indigo-400 uppercase tracking-widest block">
+                  <span className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest block">
                     Viewport: {activeTab === 'translated' ? `Translation (${currentTranslationLang.toUpperCase()})` : activeTab === 'quiz' ? 'Quiz Assessment' : activeTab === 'simple' ? 'Simplified Notes' : 'Original Transcript'}
                   </span>
                   
@@ -1248,7 +1248,7 @@ ${originalText}
                           disabled={isLevelLoading}
                           className={`px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-wider transition-all cursor-pointer ${
                             readingLevel === level
-                              ? 'bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm'
+                              ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
                               : 'text-slate-500 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-300'
                           }`}
                         >
@@ -1333,7 +1333,7 @@ ${originalText}
                               disabled={isLevelLoading}
                               className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-wider transition-all cursor-pointer ${
                                 readingLevel === level
-                                  ? 'bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm'
+                                  ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
                                   : 'text-slate-550 dark:text-slate-450 hover:text-slate-850 dark:hover:text-slate-300'
                               }`}
                             >

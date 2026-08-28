@@ -98,7 +98,7 @@ export default function DashboardPage() {
         {/* Workflow & Core capabilities */}
         <div className="space-y-6 text-left">
           <div className="space-y-1.5">
-            <span className="text-[10px] font-black text-indigo-650 dark:text-indigo-400 uppercase tracking-widest block">Core capabilities</span>
+            <span className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest block">Core capabilities</span>
             <h2 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Your Adaptive Learning Workspace</h2>
           </div>
 
@@ -127,7 +127,7 @@ export default function DashboardPage() {
 
             {/* UNDERSTAND IT */}
             <div className="bg-gradient-to-br from-white/90 to-indigo-50/40 dark:from-slate-900/90 dark:to-indigo-955/10 rounded-3xl p-6 border border-indigo-100 dark:border-indigo-950/30 shadow-sm space-y-4 hover:-translate-y-1 hover:shadow-md hover:border-indigo-300/60 dark:hover:border-indigo-800/60 transition-all duration-300">
-              <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
                 <Layers className="w-5 h-5" />
               </div>
               <h3 className="text-xs font-black uppercase tracking-wider text-slate-850 dark:text-white">UNDERSTAND IT</h3>
@@ -205,7 +205,7 @@ export default function DashboardPage() {
           {/* Custom SVG Accessibility Footprint Chart */}
           <div className="lg:col-span-4 bg-gradient-to-tr from-white to-slate-50/50 dark:from-slate-900 dark:to-slate-950 rounded-3xl p-6 border border-slate-200/60 dark:border-slate-800/60 shadow-md flex flex-col justify-between gap-4">
             <div className="space-y-1 text-left">
-              <span className="text-[10px] font-black text-indigo-650 dark:text-indigo-400 uppercase tracking-widest block">
+              <span className="text-[10px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest block">
                 Inclusion footprint
               </span>
               <h3 className="font-bold text-xs text-slate-750 dark:text-slate-350">Adaptation Preset Usage</h3>
@@ -302,7 +302,7 @@ export default function DashboardPage() {
                           <Activity className="w-2.5 h-2.5 shrink-0" />
                           <span>{session.category}</span>
                         </span>
-                        <h3 className="text-md font-bold text-slate-900 dark:text-white leading-snug group-hover:text-indigo-655 dark:group-hover:text-indigo-455 transition-colors">
+                        <h3 className="text-md font-bold text-slate-900 dark:text-white leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-455 transition-colors">
                           {session.title}
                         </h3>
                       </div>
@@ -332,7 +332,7 @@ export default function DashboardPage() {
   
                     <button
                       onClick={() => handleOpenSession(session)}
-                      className="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-650 hover:from-indigo-650 hover:to-purple-700 text-white rounded-xl text-[10px] font-black uppercase tracking-wider transition-all flex items-center gap-1 cursor-pointer shadow-md shadow-indigo-600/10 hover:scale-[1.01] active:scale-[0.98]"
+                      className="px-4 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 text-white rounded-xl text-[10px] font-black uppercase tracking-wider transition-all flex items-center gap-1 cursor-pointer shadow-md shadow-indigo-600/10 hover:scale-[1.01] active:scale-[0.98]"
                     >
                       <span>Open Workbench</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -362,7 +362,7 @@ export default function DashboardPage() {
   
               <Link
                 to="/new-lesson"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-650 hover:from-indigo-650 hover:to-purple-700 text-white text-[10px] font-black uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 text-white text-[10px] font-black uppercase tracking-wider rounded-xl transition-all shadow-md hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 <span>+ Create Your First Lecture</span>

@@ -112,7 +112,7 @@ export default function LandingPage() {
           
           <h1 className="text-5xl sm:text-8xl font-black tracking-tight text-slate-900 dark:text-white leading-none">
             One Lecture.<br />
-            <span className="bg-gradient-to-r from-indigo-600 via-purple-650 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               Every Learner.
             </span>
           </h1>
@@ -145,7 +145,7 @@ export default function LandingPage() {
               {/* Header controls */}
               <div className="border-b border-slate-100 dark:border-slate-905 bg-slate-50/50 dark:bg-slate-950/80 p-3 flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex gap-1 overflow-x-auto">
-                  <span className="px-3 py-1 bg-white dark:bg-slate-900 text-[9px] font-black uppercase text-indigo-650 dark:text-indigo-400 rounded-lg shadow-sm border border-slate-205/30 shrink-0">Simple Notes</span>
+                  <span className="px-3 py-1 bg-white dark:bg-slate-900 text-[9px] font-black uppercase text-indigo-600 dark:text-indigo-400 rounded-lg shadow-sm border border-slate-205/30 shrink-0">Simple Notes</span>
                   <span className="px-3 py-1 text-[9px] font-black uppercase text-slate-400 shrink-0">Original Script</span>
                   <span className="px-3 py-1 text-[9px] font-black uppercase text-slate-400 shrink-0">Translation</span>
                   <span className="px-3 py-1 text-[9px] font-black uppercase text-slate-400 shrink-0">Quiz</span>
@@ -174,7 +174,7 @@ export default function LandingPage() {
                   </div>
                   <div className="bg-slate-55 dark:bg-slate-900/60 p-4 rounded-2xl border border-slate-100 dark:border-slate-850 space-y-2">
                     <span className="text-[8px] font-black uppercase text-slate-400 block">Highlighted Vocab</span>
-                    <span className="text-xs font-black text-indigo-650 dark:text-indigo-400 block uppercase">PHOTOSYNTHESIS</span>
+                    <span className="text-xs font-black text-indigo-600 dark:text-indigo-400 block uppercase">PHOTOSYNTHESIS</span>
                     <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">The biochemical process plants use to convert light energy into sugars.</p>
                   </div>
                 </div>
@@ -203,7 +203,7 @@ export default function LandingPage() {
               <div className="border-t border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-950/80 p-3 flex items-center justify-between gap-4 flex-wrap text-xs">
                 <div className="flex gap-2">
                   <span className="px-3 py-1.5 bg-indigo-600 text-white rounded-lg text-[9px] font-black uppercase tracking-wider shadow-sm">Dyslexia Font: ON</span>
-                  <span className="px-3 py-1.5 bg-indigo-650 text-white rounded-lg text-[9px] font-black uppercase tracking-wider shadow-sm">Focus Mode: ON</span>
+                  <span className="px-3 py-1.5 bg-indigo-600 text-white rounded-lg text-[9px] font-black uppercase tracking-wider shadow-sm">Focus Mode: ON</span>
                   <span className="px-3 py-1.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 rounded-lg text-[9px] font-black uppercase tracking-wider">Text Size: XL</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-[8.5px] font-black uppercase tracking-wider text-slate-450 border border-slate-200/50 dark:border-slate-800 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-lg shadow-sm">
@@ -258,7 +258,7 @@ export default function LandingPage() {
                       onMouseLeave={() => setHoveredNode(null)}
                       className={`p-3.5 rounded-2xl border flex items-center gap-3 transition-all ${
                         hoveredNode === 'input-link'
-                          ? 'border-indigo-500 bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 scale-[1.02]'
+                          ? 'border-indigo-500 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 scale-[1.02]'
                           : 'border-slate-200/60 dark:border-slate-800 bg-white/40 dark:bg-slate-950/40 text-slate-600 dark:text-slate-350'
                       }`}
                     >
@@ -305,7 +305,7 @@ export default function LandingPage() {
                     <div className="absolute inset-[-50%] bg-gradient-to-r from-transparent via-indigo-500/5 to-transparent animate-spin-slow"></div>
                     
                     <div className="relative z-10 space-y-3">
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center text-white mx-auto shadow-md animate-float">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 flex items-center justify-center text-white mx-auto shadow-md animate-float">
                         <BrainCircuit className="w-6 h-6" />
                       </div>
                       <div>
@@ -329,7 +329,7 @@ export default function LandingPage() {
 
                 {/* Node 3: Outputs */}
                 <div className="md:col-span-1 space-y-2">
-                  <div className="p-2 text-center rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-250 dark:border-slate-800 text-[9px] font-black text-indigo-650 dark:text-indigo-400 uppercase tracking-wider">
+                  <div className="p-2 text-center rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-250 dark:border-slate-800 text-[9px] font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
                     🎧 Hear (Captions)
                   </div>
                   <div className="p-2 text-center rounded-xl bg-slate-100/50 dark:bg-slate-900/50 border border-slate-250 dark:border-slate-800 text-[9px] font-black text-teal-600 dark:text-teal-400 uppercase tracking-wider">
@@ -362,7 +362,7 @@ export default function LandingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Feature 1 */}
             <div className="p-6 rounded-3xl border border-slate-200 dark:border-slate-805 bg-white dark:bg-slate-900/60 shadow-sm space-y-4">
-              <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-650 dark:text-indigo-400 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
                 <Mic className="w-5 h-5" />
               </div>
               <h3 className="text-sm font-extrabold text-slate-900 dark:text-white uppercase tracking-wider">Live Captions</h3>
@@ -437,7 +437,7 @@ export default function LandingPage() {
                   onClick={() => setDemoTab('simple')}
                   className={`flex-1 py-3 px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider ${
                     demoTab === 'simple'
-                      ? 'bg-indigo-650 text-white shadow-md shadow-indigo-650/15'
+                      ? 'bg-indigo-600 text-white shadow-md shadow-indigo-500/15'
                       : 'text-slate-450 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-350'
                   }`}
                 >
@@ -548,7 +548,7 @@ export default function LandingPage() {
                     </div>
                   </div>
                   
-                  <span className="text-[10px] font-black uppercase tracking-wider text-indigo-650 dark:text-indigo-400 flex items-center gap-1.5 border-t border-slate-100 dark:border-slate-800 pt-3 w-full">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-1.5 border-t border-slate-100 dark:border-slate-800 pt-3 w-full">
                     {isActive ? 'Preset Applied' : 'Apply Preset'}
                     <ArrowRight className="w-3.5 h-3.5" />
                   </span>
@@ -572,7 +572,7 @@ export default function LandingPage() {
             </p>
             <Link
               to="/signup"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-650 text-white text-xs font-black uppercase tracking-wider rounded-2xl shadow-xl transition-all hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-600 text-white text-xs font-black uppercase tracking-wider rounded-2xl shadow-xl transition-all hover:scale-[1.02]"
             >
               <span>Get Started Now</span>
               <ArrowRight className="w-4.5 h-4.5" />
