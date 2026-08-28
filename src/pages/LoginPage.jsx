@@ -59,17 +59,9 @@ export default function LoginPage() {
           <img 
             src="/sensusai-logo.png" 
             alt="SensusAI Logo" 
-            className="h-10 w-auto object-contain brightness-100" 
-            onError={(e) => {
-              e.target.style.display = 'none';
-              if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
-              if (e.target.nextSibling?.nextSibling) e.target.nextSibling.nextSibling.style.display = 'inline';
-            }}
+            className="h-9 w-9 rounded-xl object-contain brightness-100" 
           />
-          <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/15" style={{ display: 'none' }}>
-            <Sparkles className="w-5 h-5 text-indigo-400" />
-          </div>
-          <span className="text-xs font-black uppercase tracking-widest text-slate-200" style={{ display: 'none' }}>
+          <span className="text-xs font-black uppercase tracking-widest text-slate-200">
             SensusAI
           </span>
         </div>

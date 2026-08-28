@@ -87,17 +87,9 @@ export default function SignupPage() {
           <img 
             src="/sensusai-logo.png" 
             alt="SensusAI Logo" 
-            className="h-10 w-auto object-contain brightness-100" 
-            onError={(e) => {
-              e.target.style.display = 'none';
-              if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
-              if (e.target.nextSibling?.nextSibling) e.target.nextSibling.nextSibling.style.display = 'inline';
-            }}
+            className="h-9 w-9 rounded-xl object-contain brightness-100" 
           />
-          <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center backdrop-blur-md" style={{ display: 'none' }}>
-            <Sparkles className="w-4 h-4 text-indigo-455" />
-          </div>
-          <span className="text-sm font-extrabold uppercase tracking-widest text-slate-355" style={{ display: 'none' }}>
+          <span className="text-sm font-extrabold uppercase tracking-widest text-slate-355">
             SensusAI
           </span>
         </div>

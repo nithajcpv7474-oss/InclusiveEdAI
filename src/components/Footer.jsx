@@ -11,10 +11,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-100 dark:border-slate-850">
           <div className="space-y-4 md:col-span-1 text-left">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-650 to-pink-500 flex items-center justify-center shadow-md">
-                <Sparkles className="w-4 h-4 text-white" />
-              </div>
+            <div className="flex items-center gap-2.5">
+              <img 
+                src="/sensusai-logo.png" 
+                alt="SensusAI Logo" 
+                className="w-8 h-8 rounded-lg object-contain shadow-md"
+              />
               <span className="text-base font-extrabold text-slate-900 dark:text-white">SensusAI</span>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
