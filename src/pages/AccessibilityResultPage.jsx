@@ -253,7 +253,11 @@ export default function AccessibilityResultPage() {
       }
     } catch (err) {
       console.error('Translation error:', err);
-      setTranslationError(err.message || 'Translation failed. Please try again.');
+      let friendlyMessage = err.message;
+      if (err.message && err.message.toLowerCase().includes('failed to fetch')) {
+        friendlyMessage = "Unable to connect to the SensusAI processing service. Please check your connection and try again.";
+      }
+      setTranslationError(friendlyMessage || 'Translation failed. Please try again.');
       if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
         setIsCooldown(true);
         setTimeout(() => setIsCooldown(false), 10000);
@@ -398,7 +402,11 @@ ${originalText}
       }
     } catch (err) {
       console.error(err);
-      addToast(err.message || "Failed to generate quiz. Please try again.", "error");
+      let friendlyMessage = err.message;
+      if (err.message && err.message.toLowerCase().includes('failed to fetch')) {
+        friendlyMessage = "Unable to connect to the SensusAI processing service. Please check your connection and try again.";
+      }
+      addToast(friendlyMessage || "Failed to generate quiz. Please try again.", "error");
     } finally {
       setIsQuizLoading(false);
     }
@@ -458,7 +466,11 @@ ${originalText}
       }
     } catch (err) {
       console.error(err);
-      addToast(err.message || "Failed to adjust reading level. Please try again.", "error");
+      let friendlyMessage = err.message;
+      if (err.message && err.message.toLowerCase().includes('failed to fetch')) {
+        friendlyMessage = "Unable to connect to the SensusAI processing service. Please check your connection and try again.";
+      }
+      addToast(friendlyMessage || "Failed to adjust reading level. Please try again.", "error");
     } finally {
       setIsLevelLoading(false);
     }

@@ -293,7 +293,11 @@ export default function NewLessonPage() {
         console.error("Media Ingest Error:", err);
         clearInterval(stepTimer);
         setIsSubmitting(false);
-        setFormError(err.message || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
+        let friendlyMessage = err.message;
+        if (err.message && err.message.toLowerCase().includes('failed to fetch')) {
+          friendlyMessage = "Unable to connect to the SensusAI processing service. Please check your connection, ensure your backend server is running locally on port 5000, or perform a Hard Reload (Ctrl+F5 / Cmd+Shift+R) to clear cached files on Vercel.";
+        }
+        setFormError(friendlyMessage || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
         if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
           setIsCooldown(true);
           setTimeout(() => setIsCooldown(false), 10000);
@@ -384,7 +388,11 @@ export default function NewLessonPage() {
         console.error("Link Media Ingest Error:", err);
         clearInterval(stepTimer);
         setIsSubmitting(false);
-        setFormError(err.message || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
+        let friendlyMessage = err.message;
+        if (err.message && err.message.toLowerCase().includes('failed to fetch')) {
+          friendlyMessage = "Unable to connect to the SensusAI processing service. Please check your connection, ensure your backend server is running locally on port 5000, or perform a Hard Reload (Ctrl+F5 / Cmd+Shift+R) to clear cached files on Vercel.";
+        }
+        setFormError(friendlyMessage || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
         if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
           setIsCooldown(true);
           setTimeout(() => setIsCooldown(false), 10000);
@@ -477,7 +485,11 @@ export default function NewLessonPage() {
       console.error("Ingest Integration Error:", err);
       clearInterval(stepTimer);
       setIsSubmitting(false);
-      setFormError(err.message || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
+      let friendlyMessage = err.message;
+      if (err.message && err.message.toLowerCase().includes('failed to fetch')) {
+        friendlyMessage = "Unable to connect to the SensusAI processing service. Please check your connection, ensure your backend server is running locally on port 5000, or perform a Hard Reload (Ctrl+F5 / Cmd+Shift+R) to clear cached files on Vercel.";
+      }
+      setFormError(friendlyMessage || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
       if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
         setIsCooldown(true);
         setTimeout(() => setIsCooldown(false), 10000);
