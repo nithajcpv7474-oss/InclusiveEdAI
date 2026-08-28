@@ -259,7 +259,7 @@ export default function NewLessonPage() {
         addSession({
           title: data.lecture?.title || lectureTitle || selectedFile.name,
           category: data.lecture?.category || lectureCategory || 'Lecture',
-          lang: selectedLanguageCode,
+          lang: translationLanguage,
           profiles: selectedProfiles,
           mediaType: data.lecture?.mediaType || 'audio',
           originalText: data.lecture?.transcript?.fullText || data.original,
@@ -281,7 +281,7 @@ export default function NewLessonPage() {
               simplifiedText: data.lecture?.easyRead || data.simplified,
               translatedText: data.lecture?.translated || data.translated,
               profiles: selectedProfiles,
-              lang: selectedLanguageCode,
+              lang: translationLanguage,
               segments: data.lecture?.transcript?.segments || data.segments || [],
               hasMedia: true,
               mediaFile: selectedFile
