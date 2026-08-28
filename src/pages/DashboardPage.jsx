@@ -332,7 +332,7 @@ export default function DashboardPage() {
   
                     <button
                       onClick={() => handleOpenSession(session)}
-                      className="px-4 py-2 bg-slate-900 hover:bg-indigo-600 text-white rounded-xl text-[10px] font-black uppercase tracking-wider transition-all flex items-center gap-1 cursor-pointer"
+                      className="px-4 py-2.5 bg-gradient-to-r from-indigo-600 to-purple-650 hover:from-indigo-650 hover:to-purple-700 text-white rounded-xl text-[10px] font-black uppercase tracking-wider transition-all flex items-center gap-1 cursor-pointer shadow-md shadow-indigo-600/10 hover:scale-[1.01] active:scale-[0.98]"
                     >
                       <span>Open Workbench</span>
                       <ArrowRight className="w-3.5 h-3.5" />
