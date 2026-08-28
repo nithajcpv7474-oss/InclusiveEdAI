@@ -216,12 +216,6 @@ export default function LoginPage() {
               </Link>
             </span>
           </div>
-
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-850 text-center">
-            <span className="text-[10px] font-black text-slate-405 uppercase tracking-wider">
-              🔒 demo login: demo@inclusiveed.ai / password123
-            </span>
-          </div>
         </div>
       </div>
     </div>
