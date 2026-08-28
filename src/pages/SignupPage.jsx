@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Sparkles, Eye, EyeOff, Lock, Mail, User, ArrowRight, ArrowLeft, Check, CheckCircle2 } from 'lucide-react';
+import { Sparkles, Eye, EyeOff, Lock, Mail, User, ArrowRight, ArrowLeft, Check, CheckCircle2, Accessibility } from 'lucide-react';
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -77,11 +77,12 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] grid grid-cols-1 lg:grid-cols-12">
+    <div className="min-h-[calc(100vh-4rem)] grid grid-cols-1 lg:grid-cols-12 text-left">
       {/* Left Column: Storytelling panel */}
-      <div className="hidden lg:flex lg:col-span-5 bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-955 text-white p-12 flex-col justify-between relative overflow-hidden">
-        <div className="absolute top-[10%] left-[-10%] w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-[80px]" />
-        <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] bg-pink-500/10 rounded-full blur-[90px]" />
+      <div className="hidden lg:flex lg:col-span-5 bg-gradient-to-br from-[#17153F] via-[#24205F] to-[#30286F] text-white p-12 flex-col justify-between relative overflow-hidden">
+        {/* Subtle blurred accent glows */}
+        <div className="absolute top-[15%] left-[-10%] w-[300px] h-[300px] bg-[#8B5CF6]/8 rounded-full blur-[90px] pointer-events-none" />
+        <div className="absolute bottom-[25%] right-[-10%] w-[320px] h-[320px] bg-[#EC4899]/6 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="relative z-10 flex items-center gap-2.5">
           <img 
@@ -89,46 +90,50 @@ export default function SignupPage() {
             alt="SensusAI Logo" 
             className="h-9 w-9 rounded-xl object-contain brightness-100" 
           />
-          <span className="text-sm font-extrabold uppercase tracking-widest text-slate-355">
+          <span className="text-sm font-extrabold uppercase tracking-widest text-[#E0E7FF]">
             SensusAI
           </span>
         </div>
 
         <div className="relative z-10 space-y-6 my-auto">
-          <h2 className="text-4xl font-black leading-tight tracking-tight">
+          <h2 className="text-4xl font-black leading-tight tracking-tight text-[#FFFFFF]">
             Design Your Own<br />
-            <span className="bg-gradient-to-r from-indigo-400 via-purple-350 to-pink-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#A78BFA] to-[#F0ABFC] bg-clip-text text-transparent">
               Learning Space.
             </span>
           </h2>
-          <p className="text-slate-400 leading-relaxed text-sm">
-            Whether you read, listen, translate, or summary-study, configure your account settings on startup. sensusai adapts immediately to your workflow.
+          <p className="text-[#C4B5FD] leading-relaxed text-sm font-medium">
+            Whether you read, listen, translate, or summary-study, configure your account settings on startup. SensusAI adapts immediately to your workflow.
           </p>
 
           {/* Stepper indicators */}
           <div className="flex items-center gap-2.5 pt-4">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border transition-all ${
-              step >= 1 ? 'bg-indigo-600 border-indigo-550 text-white' : 'border-slate-800 text-slate-500'
+              step >= 1 ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white font-black' : 'border-[#373275] text-[#373275] bg-transparent'
             }`}>1</div>
-            <div className="w-6 h-[1.5px] bg-slate-800" />
+            <div className="w-6 h-[1.5px] bg-[#373275]" />
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border transition-all ${
-              step >= 2 ? 'bg-indigo-600 border-indigo-550 text-white' : 'border-slate-800 text-slate-500'
+              step >= 2 ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white font-black' : 'border-[#373275] text-[#373275] bg-transparent'
             }`}>2</div>
-            <div className="w-6 h-[1.5px] bg-slate-800" />
+            <div className="w-6 h-[1.5px] bg-[#373275]" />
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold border transition-all ${
-              step >= 3 ? 'bg-indigo-600 border-indigo-550 text-white' : 'border-slate-800 text-slate-500'
+              step >= 3 ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white font-black' : 'border-[#373275] text-[#373275] bg-transparent'
             }`}>3</div>
           </div>
         </div>
 
-        <div className="relative z-10 text-[10px] text-slate-550 font-bold uppercase tracking-wider">
-          © 2026 sensusai AI Project Core • WCAG 2.2 compliant
+        <div className="relative z-10 text-[10px] text-[#E0E7FF] font-bold uppercase tracking-wider flex items-center gap-1.5">
+          <Accessibility className="w-3.5 h-3.5" />
+          <span>© 2026 SensusAI Project Core • WCAG 2.2 compliant</span>
         </div>
       </div>
 
       {/* Right Column: Interactive Card Form */}
-      <div className="lg:col-span-7 flex items-center justify-center p-6 sm:p-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
-        <div className="w-full max-w-lg space-y-8 bg-white dark:bg-slate-900/60 p-8 sm:p-10 rounded-3xl border border-slate-200/50 dark:border-slate-805/80 shadow-md">
+      <div className="lg:col-span-7 flex items-center justify-center p-6 sm:p-12 bg-[#F8FAFC] relative overflow-hidden transition-colors duration-300">
+        {/* Subtle lavender radial glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,232,255,0.45),transparent_70%)] pointer-events-none" />
+
+        <div className="w-full max-w-lg space-y-8 bg-[#FFFFFF] p-8 sm:p-10 rounded-[20px] border border-[#E9E7F5] shadow-[0_8px_30px_rgba(23,21,63,0.02)] relative z-10">
           {error && (
             <div className="p-4 bg-rose-50 dark:bg-rose-955/20 border border-rose-200 dark:border-rose-900/40 rounded-2xl text-xs text-rose-800 dark:text-rose-455 font-semibold">
               {error}
@@ -142,7 +147,7 @@ export default function SignupPage() {
                 <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Create account
                 </h1>
-                <p className="text-xs text-slate-500 dark:text-slate-450">
+                <p className="text-xs text-slate-550 dark:text-slate-450 font-medium">
                   Begin by entering your registration details.
                 </p>
               </div>
@@ -153,14 +158,14 @@ export default function SignupPage() {
                     Full Name
                   </label>
                   <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
                     <input
                       id="name-input"
                       type="text"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Alex Learner"
-                      className="w-full pl-11 pr-4 py-3.5 border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm text-slate-850 dark:text-slate-100"
+                      className="w-full pl-11 pr-4 py-3.5 border border-[#DDE2EE] bg-[#FFFFFF] text-[#334155] placeholder-[#94A3B8] rounded-[12px] focus:outline-none focus:border-[#6366F1] focus:ring-2 focus:ring-[#6366F1]/10 text-sm font-semibold transition-all"
                     />
                   </div>
                 </div>
@@ -170,14 +175,14 @@ export default function SignupPage() {
                     Email Address
                   </label>
                   <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
                     <input
                       id="email-input"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="name@university.edu"
-                      className="w-full pl-11 pr-4 py-3.5 border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm text-slate-850 dark:text-slate-100"
+                      className="w-full pl-11 pr-4 py-3.5 border border-[#DDE2EE] bg-[#FFFFFF] text-[#334155] placeholder-[#94A3B8] rounded-[12px] focus:outline-none focus:border-[#6366F1] focus:ring-2 focus:ring-[#6366F1]/10 text-sm font-semibold transition-all"
                     />
                   </div>
                 </div>
@@ -188,14 +193,14 @@ export default function SignupPage() {
                       Password
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                      <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
                       <input
                         id="pass-input"
                         type={showPassword ? 'text' : 'password'}
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="••••••••"
-                        className="w-full pl-11 pr-4 py-3.5 border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm text-slate-850 dark:text-slate-100"
+                        className="w-full pl-11 pr-4 py-3.5 border border-[#DDE2EE] bg-[#FFFFFF] text-[#334155] placeholder-[#94A3B8] rounded-[12px] focus:outline-none focus:border-[#6366F1] focus:ring-2 focus:ring-[#6366F1]/10 text-sm font-semibold transition-all"
                       />
                     </div>
                   </div>
@@ -205,14 +210,14 @@ export default function SignupPage() {
                       Confirm Password
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                      <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
                       <input
                         id="confirm-pass-input"
                         type={showPassword ? 'text' : 'password'}
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder="••••••••"
-                        className="w-full pl-11 pr-4 py-3.5 border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm text-slate-850 dark:text-slate-100"
+                        className="w-full pl-11 pr-4 py-3.5 border border-[#DDE2EE] bg-[#FFFFFF] text-[#334155] placeholder-[#94A3B8] rounded-[12px] focus:outline-none focus:border-[#6366F1] focus:ring-2 focus:ring-[#6366F1]/10 text-sm font-semibold transition-all"
                       />
                     </div>
                   </div>
@@ -224,9 +229,9 @@ export default function SignupPage() {
                     id="show-pass"
                     checked={showPassword}
                     onChange={() => setShowPassword(!showPassword)}
-                    className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                    className="rounded border-[#DDE2EE] text-[#6366F1] focus:ring-[#6366F1]"
                   />
-                  <label htmlFor="show-pass" className="text-xs text-slate-500 dark:text-slate-450 cursor-pointer">
+                  <label htmlFor="show-pass" className="text-xs text-slate-500 dark:text-slate-450 cursor-pointer font-semibold">
                     Show Password
                   </label>
                 </div>
@@ -235,16 +240,16 @@ export default function SignupPage() {
               <button
                 type="button"
                 onClick={handleNextStep}
-                className="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full py-3.5 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 text-white text-xs font-black uppercase tracking-wider rounded-[12px] transition-all shadow-md shadow-indigo-500/10 flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <span>Continue to Onboarding</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
               <div className="text-center pt-2">
-                <span className="text-xs text-slate-500 dark:text-slate-450">
+                <span className="text-xs font-bold text-slate-500 dark:text-slate-455">
                   Already have an account?{' '}
-                  <Link to="/login" className="text-indigo-600 dark:text-indigo-400 font-bold hover:underline">
+                  <Link to="/login" className="text-[#4F46E5] hover:text-[#7C3AED] font-extrabold transition-colors">
                     Sign In
                   </Link>
                 </span>
@@ -259,7 +264,7 @@ export default function SignupPage() {
                 <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   How do you prefer to learn?
                 </h1>
-                <p className="text-xs text-slate-500 dark:text-slate-450">
+                <p className="text-xs text-slate-555 dark:text-slate-450 font-medium">
                   Select all adaptations that support your preferred classroom study workflow.
                 </p>
               </div>
@@ -272,14 +277,14 @@ export default function SignupPage() {
                       key={pref.id}
                       type="button"
                       onClick={() => handleTogglePref(pref.id)}
-                      className={`w-full p-4.5 rounded-2xl border text-left transition-all flex items-start gap-4 hover:scale-[1.01] ${
+                      className={`w-full p-4.5 rounded-[20px] border text-left transition-all flex items-start gap-4 hover:scale-[1.01] ${
                         isSelected 
-                          ? 'border-indigo-600 bg-indigo-500/5 shadow-md' 
-                          : 'border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-950/20'
+                          ? 'border-[#8B5CF6] bg-[#8B5CF6]/5 shadow-sm' 
+                          : 'border-[#E9E7F5] bg-[#FFFFFF]'
                       }`}
                     >
-                      <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 ${
-                        isSelected ? 'bg-indigo-600 border-indigo-600 text-white' : 'border-slate-300 dark:border-slate-700 bg-white'
+                      <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-0.5 transition-colors ${
+                        isSelected ? 'bg-[#8B5CF6] border-[#8B5CF6] text-white' : 'border-[#DDE2EE] bg-[#FFFFFF]'
                       }`}>
                         {isSelected && <Check className="w-3.5 h-3.5" />}
                       </div>
@@ -287,7 +292,7 @@ export default function SignupPage() {
                         <span className="text-sm font-extrabold text-slate-900 dark:text-white block">
                           {pref.label}
                         </span>
-                        <p className="text-xs text-slate-450 dark:text-slate-500 leading-normal mt-1">
+                        <p className="text-xs text-slate-455 dark:text-slate-500 leading-normal mt-1 font-semibold">
                           {pref.desc}
                         </p>
                       </div>
@@ -300,7 +305,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={handlePrevStep}
-                  className="flex-1 py-4 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/60 font-bold rounded-xl text-xs text-slate-700 dark:text-slate-350 transition-all uppercase tracking-wider flex items-center justify-center gap-1.5"
+                  className="flex-1 py-3.5 border border-[#DDE2EE] bg-[#FFFFFF] hover:bg-slate-50 font-bold rounded-[12px] text-xs text-slate-700 dark:text-slate-300 transition-all uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Back</span>
@@ -308,7 +313,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={handleNextStep}
-                  className="flex-1 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5 text-xs uppercase tracking-wider cursor-pointer"
+                  className="flex-1 py-3.5 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 text-white font-bold rounded-[12px] transition-all shadow-md shadow-indigo-500/10 flex items-center justify-center gap-1.5 text-xs uppercase tracking-wider cursor-pointer"
                 >
                   <span>Continue</span>
                   <ArrowRight className="w-4 h-4" />
@@ -324,12 +329,12 @@ export default function SignupPage() {
                 <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Choose your native language
                 </h1>
-                <p className="text-xs text-slate-500 dark:text-slate-450">
+                <p className="text-xs text-slate-550 dark:text-slate-455 font-medium">
                   Select your primary language for localized summaries and workspace translation tabs.
                 </p>
               </div>
 
-              <div className="space-y-1.5 p-6 bg-slate-50 dark:bg-slate-950/40 rounded-3xl border border-slate-200/50 dark:border-slate-805">
+              <div className="space-y-1.5 p-6 bg-[#F8FAFC] rounded-[20px] border border-[#E9E7F5]">
                 <label htmlFor="lang-select" className="text-[10px] font-black text-slate-450 dark:text-slate-500 uppercase tracking-widest block mb-2">
                   Primary Language Mapping
                 </label>
@@ -337,7 +342,7 @@ export default function SignupPage() {
                   id="lang-select"
                   value={selectedLang}
                   onChange={(e) => setSelectedLang(e.target.value)}
-                  className="w-full p-3 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-bold text-slate-750 dark:text-slate-300"
+                  className="w-full p-3 border border-[#DDE2EE] bg-[#FFFFFF] rounded-xl focus:outline-none focus:border-[#6366F1] focus:ring-2 focus:ring-[#6366F1]/10 text-sm font-bold text-slate-750 dark:text-slate-300"
                 >
                   <option value="es">Spanish (Español)</option>
                   <option value="zh">Chinese (中文)</option>
@@ -353,7 +358,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={handlePrevStep}
-                  className="flex-1 py-4 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/60 font-bold rounded-xl text-xs text-slate-700 dark:text-slate-350 transition-all uppercase tracking-wider flex items-center justify-center gap-1.5"
+                  className="flex-1 py-3.5 border border-[#DDE2EE] bg-[#FFFFFF] hover:bg-slate-50 font-bold rounded-[12px] text-xs text-slate-700 dark:text-slate-300 transition-all uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4" />
                   <span>Back</span>
@@ -361,7 +366,7 @@ export default function SignupPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-xs uppercase tracking-wider group cursor-pointer"
+                  className="flex-1 py-3.5 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0 text-white font-bold rounded-[12px] transition-all shadow-md shadow-indigo-500/10 flex items-center justify-center gap-2 text-xs uppercase tracking-wider group cursor-pointer"
                 >
                   <span>{loading ? 'Creating...' : 'Create Account'}</span>
                   {!loading && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
@@ -370,7 +375,7 @@ export default function SignupPage() {
             </form>
           )}
 
-          <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 text-center text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 text-center text-[10px] font-bold text-slate-405 uppercase tracking-wide">
             🔒 Privacy check: your learning history stays client-side.
           </div>
         </div>
