@@ -603,18 +603,26 @@ export default function NewLessonPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12 sm:py-16">
-      <div className="space-y-3 mb-10 text-center sm:text-left">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Ingest a Lecture
-        </h1>
-        <p className="text-sm text-slate-500 dark:text-slate-400 max-w-2xl leading-relaxed">
-          Upload classroom files, paste video URLs or paste verbatim transcripts. Choose adaptation presets to trigger specialized formatting outputs.
-        </p>
-      </div>
+    <div className="relative min-h-[calc(100vh-4rem)] bg-slate-50/30 dark:bg-slate-950/30 transition-colors duration-300 overflow-hidden pb-16">
+      {/* Background glow effects */}
+      <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-5%] w-[500px] h-[500px] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[120px] pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 py-10 space-y-10 relative z-10">
+        
+        {/* Header Hero */}
+        <div className="bg-gradient-to-tr from-slate-950 via-indigo-950 to-indigo-900 rounded-3xl p-8 sm:p-10 border border-slate-800 text-white relative overflow-hidden shadow-2xl shadow-indigo-950/20 text-left">
+          <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-[80px] pointer-events-none" />
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+            Create a New Learning Experience
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-350 leading-relaxed max-w-xl font-semibold mt-2">
+            Upload classroom files, paste video URLs or paste verbatim transcripts. Let SensusAI transform it into personalized learning content.
+          </p>
+        </div>
 
       {formError && (
-        <div className="mb-6 p-4 bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/50 rounded-2xl flex items-start gap-3 text-rose-800 dark:text-rose-455" role="alert">
+        <div className="p-4 bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/50 rounded-2xl flex items-start gap-3 text-rose-800 dark:text-rose-455 text-left font-semibold" role="alert">
           <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
           <div>
             <h3 className="font-bold text-sm">Ingest Error</h3>
@@ -626,7 +634,7 @@ export default function NewLessonPage() {
       <form onSubmit={handleSubmit} className="space-y-8">
         
         {/* Lecture Meta Fields */}
-        <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 sm:p-8 border border-slate-200/60 dark:border-slate-800/60 shadow-md grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 sm:p-8 border border-slate-200/60 dark:border-slate-800/60 shadow-md grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
           <div className="space-y-1.5">
             <label htmlFor="lecture-title" className="text-[10px] font-black text-slate-455 dark:text-slate-500 uppercase tracking-widest block">
               Lecture / Session Title
@@ -730,7 +738,7 @@ export default function NewLessonPage() {
             )}
 
             {sourceTab === 'file' && (
-              <div className="border-2 border-dashed border-slate-300 dark:border-slate-800 hover:border-indigo-500 dark:hover:border-indigo-550 transition-colors rounded-2xl p-10 flex flex-col items-center justify-center text-center cursor-pointer relative bg-slate-50/20 dark:bg-slate-950/10 group">
+              <div className="border-2 border-dashed border-indigo-300 dark:border-indigo-900 bg-gradient-to-tr from-white to-indigo-50/20 dark:from-slate-900 dark:to-indigo-950/10 hover:border-indigo-500 dark:hover:border-indigo-500 transition-colors rounded-3xl p-12 flex flex-col items-center justify-center text-center cursor-pointer relative shadow-sm group">
                 <input
                   type="file"
                   accept="audio/*,video/*"
@@ -738,16 +746,16 @@ export default function NewLessonPage() {
                   className="absolute inset-0 opacity-0 cursor-pointer"
                   aria-label="Upload lecture audio or video file"
                 />
-                <UploadCloud className="w-12 h-12 text-slate-400 group-hover:scale-105 transition-transform mb-3" />
+                <UploadCloud className="w-12 h-12 text-indigo-500 dark:text-indigo-400 group-hover:scale-110 transition-transform mb-4 animate-pulse" />
                 {selectedFile ? (
                   <div>
-                    <p className="text-sm font-bold text-indigo-600 dark:text-indigo-400">{selectedFile.name}</p>
-                    <p className="text-xs text-slate-400 mt-1">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB • Ready to process</p>
+                    <p className="text-sm font-extrabold text-indigo-650 dark:text-indigo-400">{selectedFile.name}</p>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-widest mt-1 font-bold">{(selectedFile.size / 1024 / 1024).toFixed(2)} MB • Ready to process</p>
                   </div>
                 ) : (
-                  <div>
-                    <p className="text-sm font-bold text-slate-700 dark:text-slate-250">Drag & drop or browse your local files</p>
-                    <p className="text-[10px] text-slate-400 uppercase tracking-wider mt-1">Supports MP3, MP4, WAV, M4A up to 50MB</p>
+                  <div className="space-y-1">
+                    <p className="text-sm font-extrabold text-slate-800 dark:text-slate-205">Drag & drop or browse your local files</p>
+                    <p className="text-[9px] text-slate-405 dark:text-slate-500 uppercase tracking-widest font-black">Supports MP3, MP4, WAV, M4A up to 50MB</p>
                   </div>
                 )}
               </div>
@@ -935,13 +943,14 @@ export default function NewLessonPage() {
           <button
             type="submit"
             disabled={isCooldown}
-            className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-750 disabled:bg-slate-400 dark:disabled:bg-slate-800 disabled:cursor-not-allowed disabled:scale-100 text-white font-bold rounded-2xl shadow-xl shadow-indigo-650/15 hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group hover:scale-[1.02] cursor-pointer"
+            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-indigo-600 via-purple-650 to-indigo-600 hover:scale-[1.01] active:scale-[0.98] disabled:bg-slate-400 dark:disabled:bg-slate-800 disabled:cursor-not-allowed disabled:scale-100 text-white font-extrabold rounded-2xl shadow-lg shadow-indigo-600/15 transition-all flex items-center justify-center gap-2 group cursor-pointer"
           >
-            <span>{isCooldown ? 'Quota Reached - Wait...' : 'Make this lesson accessible'}</span>
+            <span>{isCooldown ? 'Quota Reached - Wait...' : 'Generate Learning Experience'}</span>
             {!isCooldown && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 }

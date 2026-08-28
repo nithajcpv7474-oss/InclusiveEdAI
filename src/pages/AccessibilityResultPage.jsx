@@ -900,7 +900,12 @@ ${originalText}
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <div className="relative min-h-[calc(100vh-4rem)] bg-slate-50/30 dark:bg-slate-950/30 transition-colors duration-300 overflow-hidden pb-16">
+      {/* Background glow effects */}
+      <div className="absolute top-[10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-indigo-500/5 dark:bg-indigo-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] right-[-5%] w-[500px] h-[500px] rounded-full bg-purple-500/5 dark:bg-purple-500/10 blur-[120px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 text-left">
       
       {/* Back to upload details */}
       <div className="flex items-center justify-between gap-4 mb-8">
@@ -1123,10 +1128,10 @@ ${originalText}
               <div className="flex flex-1 gap-1.5 overflow-x-auto">
                 <button
                   onClick={() => { setActiveTab('simple'); handleStop(); }}
-                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 ${
+                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'simple'
-                      ? 'bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
-                      : 'text-slate-500 dark:text-slate-455 hover:text-slate-750 dark:hover:text-slate-350'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
                   <Layers className="w-4 h-4" />
@@ -1135,10 +1140,10 @@ ${originalText}
 
                 <button
                   onClick={() => { setActiveTab('original'); handleStop(); }}
-                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 ${
+                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'original'
-                      ? 'bg-white dark:bg-slate-800 text-indigo-650 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
-                      : 'text-slate-500 dark:text-slate-455 hover:text-slate-750 dark:hover:text-slate-350'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
                   <BookOpen className="w-4.5 h-4.5" />
@@ -1147,10 +1152,10 @@ ${originalText}
 
                 <button
                   onClick={() => { setActiveTab('translated'); handleStop(); }}
-                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 ${
+                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'translated'
-                      ? 'bg-white dark:bg-slate-800 text-indigo-655 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
-                      : 'text-slate-500 dark:text-slate-455 hover:text-slate-750 dark:hover:text-slate-350'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
                   <Languages className="w-4 h-4" />
@@ -1159,10 +1164,10 @@ ${originalText}
 
                 <button
                   onClick={() => { setActiveTab('quiz'); handleStop(); }}
-                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 ${
+                  className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 uppercase tracking-wider shrink-0 cursor-pointer ${
                     activeTab === 'quiz'
-                      ? 'bg-white dark:bg-slate-800 text-indigo-655 dark:text-indigo-400 shadow-sm border border-slate-200/50 dark:border-slate-700'
-                      : 'text-slate-500 dark:text-slate-455 hover:text-slate-750 dark:hover:text-slate-350'
+                      ? 'bg-gradient-to-r from-indigo-600 to-purple-650 text-white shadow-md shadow-indigo-650/10'
+                      : 'text-slate-550 dark:text-slate-455 hover:text-slate-800 dark:hover:text-slate-200'
                   }`}
                 >
                   <HelpCircle className="w-4 h-4" />
@@ -1457,6 +1462,7 @@ ${originalText}
           </div>
         </div>
 
+      </div>
       </div>
     </div>
   );
