@@ -88,7 +88,7 @@ export default function SignupPage() {
             <Sparkles className="w-4 h-4 text-indigo-455" />
           </div>
           <span className="text-sm font-extrabold uppercase tracking-widest text-slate-350">
-            InclusiveEd AI
+            sensusai AI
           </span>
         </div>
 
@@ -100,7 +100,7 @@ export default function SignupPage() {
             </span>
           </h2>
           <p className="text-slate-400 leading-relaxed text-sm">
-            Whether you read, listen, translate, or summary-study, configure your account settings on startup. InclusiveEd adapts immediately to your workflow.
+            Whether you read, listen, translate, or summary-study, configure your account settings on startup. sensusai adapts immediately to your workflow.
           </p>
 
           {/* Stepper indicators */}
@@ -120,7 +120,7 @@ export default function SignupPage() {
         </div>
 
         <div className="relative z-10 text-[10px] text-slate-550 font-bold uppercase tracking-wider">
-          © 2026 InclusiveEd AI Project Core • WCAG 2.2 compliant
+          © 2026 sensusai AI Project Core • WCAG 2.2 compliant
         </div>
       </div>
 

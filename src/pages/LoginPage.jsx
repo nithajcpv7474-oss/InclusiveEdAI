@@ -41,7 +41,7 @@ export default function LoginPage() {
       if (result.success) {
         navigate('/dashboard');
       } else {
-        setError(result.message || 'Invalid credentials. Hint: use demo@inclusiveed.ai / password123');
+        setError(result.message || 'Invalid credentials. Hint: use demo@sensusai.ai / password123');
       }
     }, 800);
   };
@@ -60,7 +60,7 @@ export default function LoginPage() {
             <Sparkles className="w-5 h-5 text-indigo-400" />
           </div>
           <span className="text-xs font-black uppercase tracking-widest text-slate-200">
-            InclusiveEd AI
+            sensusai AI
           </span>
         </div>
 
@@ -127,7 +127,7 @@ export default function LoginPage() {
         {/* Footer info */}
         <div className="relative z-10 text-[10px] text-slate-450 font-black uppercase tracking-wider flex items-center gap-1.5 justify-center lg:justify-start">
           <Accessibility className="w-3.5 h-3.5 text-indigo-400" />
-          <span>© 2026 InclusiveEd AI. Built for inclusive learning.</span>
+          <span>© 2026 sensusai AI. Built for inclusive learning.</span>
         </div>
       </div>
 
@@ -162,7 +162,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="demo@inclusiveed.ai"
+                  placeholder="demo@sensusai.ai"
                   className="w-full pl-11 pr-4 py-3.5 border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm font-semibold text-slate-850 dark:text-slate-100"
                 />
               </div>

@@ -1,7 +1,7 @@
 {
-  "name": "inclusiveedai-backend",
+  "name": "sensusaiai-backend",
   "version": "1.0.0",
-  "description": "Backend services for InclusiveEd AI using Node.js, Express, and Gemini.",
+  "description": "Backend services for sensusai AI using Node.js, Express, and Gemini.",
   "type": "module",
   "main": "index.js",
   "scripts": {

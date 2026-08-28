@@ -239,7 +239,7 @@ export default function LandingPage() {
                 One Ingestion. Adaptive Outputs.
               </h2>
               <p className="text-sm text-slate-500 dark:text-slate-450 max-w-lg mx-auto">
-                Trace how the InclusiveEd AI core maps one single educational lecture stream into multiple personalized outputs.
+                Trace how the sensusai AI core maps one single educational lecture stream into multiple personalized outputs.
               </p>
             </div>
 

@@ -42,14 +42,25 @@ export default function Header() {
           {/* Logo & Brand */}
           <Link 
             to={user ? "/dashboard" : "/"} 
-            className="flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-xl p-1 group transition-all"
-            aria-label="InclusiveEd AI home"
+            className="flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-xl p-1 group transition-all"
+            aria-label="SensusAI home"
           >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/10 group-hover:scale-105 transition-transform">
-              <Sparkles className="w-5 h-5 text-white animate-spin-slow" />
+            <img 
+              src="/sensusai-logo.png" 
+              alt="SensusAI" 
+              className="h-8 w-auto object-contain hover:scale-[1.01] transition-transform"
+              onError={(e) => {
+                // Keep the icon block visible as a fallback if the logo image is missing
+                e.target.style.display = 'none';
+                if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                if (e.target.nextSibling?.nextSibling) e.target.nextSibling.nextSibling.style.display = 'inline';
+              }}
+            />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 via-purple-650 to-pink-500 flex items-center justify-center shadow-md shadow-indigo-500/10 group-hover:scale-105 transition-transform" style={{ display: 'none' }}>
+              <Sparkles className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-black tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-650 bg-clip-text text-transparent">
-              InclusiveEd <span className="text-slate-900 dark:text-white transition-colors">AI</span>
+            <span className="text-lg font-black tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-650 bg-clip-text text-transparent" style={{ display: 'none' }}>
+              SensusAI
             </span>
           </Link>
 

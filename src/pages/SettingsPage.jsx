@@ -107,7 +107,7 @@ export default function SettingsPage() {
               <input
                 id="settings-email"
                 type="email"
-                value={user?.email || 'demo@inclusiveed.ai'}
+                value={user?.email || 'demo@sensusai.ai'}
                 disabled
                 className="w-full p-3.5 border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/40 text-slate-455 dark:text-slate-500 rounded-xl text-sm focus:outline-none cursor-not-allowed font-semibold"
               />

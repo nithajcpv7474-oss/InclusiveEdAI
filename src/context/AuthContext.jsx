@@ -12,31 +12,31 @@ export const AuthProvider = ({ children }) => {
   // Initialize Auth & Seed Sessions
   useEffect(() => {
     // 1. Get current active user session
-    const activeUser = localStorage.getItem('inclusiveed_user');
+    const activeUser = localStorage.getItem('sensusai_user');
     if (activeUser) {
       setUser(JSON.parse(activeUser));
     }
 
     // 2. Hydrate users list or seed default users
-    const storedUsers = localStorage.getItem('inclusiveed_registered_users');
+    const storedUsers = localStorage.getItem('sensusai_registered_users');
     let registeredUsers = storedUsers ? JSON.parse(storedUsers) : [];
     
     // Seed demo user if missing
-    const demoUserExists = registeredUsers.some(u => u.email === 'demo@inclusiveed.ai');
+    const demoUserExists = registeredUsers.some(u => u.email === 'demo@sensusai.ai');
     if (!demoUserExists) {
       const demoUser = {
         name: 'Alex Learner',
-        email: 'demo@inclusiveed.ai',
+        email: 'demo@sensusai.ai',
         password: 'password123',
         preferences: ['adhd', 'dyslexia', 'auditory'],
         lang: 'te'
       };
       registeredUsers.push(demoUser);
-      localStorage.setItem('inclusiveed_registered_users', JSON.stringify(registeredUsers));
+      localStorage.setItem('sensusai_registered_users', JSON.stringify(registeredUsers));
     }
 
     // 3. Hydrate sessions or seed default lectures
-    const storedSessions = localStorage.getItem('inclusiveed_sessions');
+    const storedSessions = localStorage.getItem('sensusai_sessions');
     let userSessions = storedSessions ? JSON.parse(storedSessions) : [];
 
     if (userSessions.length === 0) {
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
       userSessions = [
         {
           id: 'session-1',
-          userEmail: 'demo@inclusiveed.ai',
+          userEmail: 'demo@sensusai.ai',
           title: 'Ecology 101: Photosynthesis & Biosphere Balance',
           category: 'Lecture',
           date: new Date(Date.now() - 24 * 60 * 60 * 1000).toLocaleDateString(),
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
         },
         {
           id: 'session-2',
-          userEmail: 'demo@inclusiveed.ai',
+          userEmail: 'demo@sensusai.ai',
           title: 'Hydrology 202: The Global Water Cycle',
           category: 'Study Notes',
           date: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toLocaleDateString(),
@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }) => {
           translatedText: 'El ciclo global del agua describe el movimiento continuo del agua sobre, arriba y debajo de la superficie de la Tierra. La radiación solar calienta el agua en océanos y mares, induciendo la evaporación como vapor de agua. El vapor se eleva a la atmósfera donde se enfría y se condensa en nubes.'
         }
       ];
-      localStorage.setItem('inclusiveed_sessions', JSON.stringify(userSessions));
+      localStorage.setItem('sensusai_sessions', JSON.stringify(userSessions));
     }
     
     setSessions(userSessions);
@@ -76,7 +76,7 @@ export const AuthProvider = ({ children }) => {
 
   // Login handler
   const login = (email, password) => {
-    const storedUsers = localStorage.getItem('inclusiveed_registered_users');
+    const storedUsers = localStorage.getItem('sensusai_registered_users');
     const registeredUsers = storedUsers ? JSON.parse(storedUsers) : [];
 
     const foundUser = registeredUsers.find(
@@ -91,7 +91,7 @@ export const AuthProvider = ({ children }) => {
         lang: foundUser.lang || 'es'
       };
       setUser(sessionUser);
-      localStorage.setItem('inclusiveed_user', JSON.stringify(sessionUser));
+      localStorage.setItem('sensusai_user', JSON.stringify(sessionUser));
       return { success: true };
     }
     return { success: false, message: 'Invalid email or password.' };
@@ -99,7 +99,7 @@ export const AuthProvider = ({ children }) => {
 
   // Signup handler
   const signup = (name, email, password, preferences = [], lang = 'es') => {
-    const storedUsers = localStorage.getItem('inclusiveed_registered_users');
+    const storedUsers = localStorage.getItem('sensusai_registered_users');
     const registeredUsers = storedUsers ? JSON.parse(storedUsers) : [];
 
     const userExists = registeredUsers.some(u => u.email.toLowerCase() === email.toLowerCase());
@@ -109,45 +109,45 @@ export const AuthProvider = ({ children }) => {
 
     const newUser = { name, email, password, preferences, lang };
     registeredUsers.push(newUser);
-    localStorage.setItem('inclusiveed_registered_users', JSON.stringify(registeredUsers));
+    localStorage.setItem('sensusai_registered_users', JSON.stringify(registeredUsers));
 
     const sessionUser = { name, email, preferences, lang };
     setUser(sessionUser);
-    localStorage.setItem('inclusiveed_user', JSON.stringify(sessionUser));
+    localStorage.setItem('sensusai_user', JSON.stringify(sessionUser));
     return { success: true };
   };
 
   // Logout handler
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('inclusiveed_user');
+    localStorage.removeItem('sensusai_user');
   };
 
   // Add processed lecture session
   const addSession = (session) => {
-    const storedSessions = localStorage.getItem('inclusiveed_sessions');
+    const storedSessions = localStorage.getItem('sensusai_sessions');
     let userSessions = storedSessions ? JSON.parse(storedSessions) : [];
 
     const newSession = {
       ...session,
       id: `session-${Date.now()}`,
-      userEmail: user?.email || 'demo@inclusiveed.ai',
+      userEmail: user?.email || 'demo@sensusai.ai',
       date: new Date().toLocaleDateString()
     };
 
     userSessions.unshift(newSession);
-    localStorage.setItem('inclusiveed_sessions', JSON.stringify(userSessions));
+    localStorage.setItem('sensusai_sessions', JSON.stringify(userSessions));
     setSessions(userSessions);
     return newSession;
   };
 
   // Delete lecture session
   const deleteSession = (sessionId) => {
-    const storedSessions = localStorage.getItem('inclusiveed_sessions');
+    const storedSessions = localStorage.getItem('sensusai_sessions');
     let userSessions = storedSessions ? JSON.parse(storedSessions) : [];
 
     userSessions = userSessions.filter(s => s.id !== sessionId);
-    localStorage.setItem('inclusiveed_sessions', JSON.stringify(userSessions));
+    localStorage.setItem('sensusai_sessions', JSON.stringify(userSessions));
     setSessions(userSessions);
   };
 
@@ -158,10 +158,10 @@ export const AuthProvider = ({ children }) => {
     // Update active user state
     const updatedUser = { ...user, preferences: updatedPrefs, lang: updatedLang };
     setUser(updatedUser);
-    localStorage.setItem('inclusiveed_user', JSON.stringify(updatedUser));
+    localStorage.setItem('sensusai_user', JSON.stringify(updatedUser));
 
     // Update registered list
-    const storedUsers = localStorage.getItem('inclusiveed_registered_users');
+    const storedUsers = localStorage.getItem('sensusai_registered_users');
     let registeredUsers = storedUsers ? JSON.parse(storedUsers) : [];
     registeredUsers = registeredUsers.map(u => {
       if (u.email.toLowerCase() === user.email.toLowerCase()) {
@@ -169,7 +169,7 @@ export const AuthProvider = ({ children }) => {
       }
       return u;
     });
-    localStorage.setItem('inclusiveed_registered_users', JSON.stringify(registeredUsers));
+    localStorage.setItem('sensusai_registered_users', JSON.stringify(registeredUsers));
   };
 
   return (

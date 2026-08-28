@@ -1,9 +1,9 @@
-# InclusiveEd AI
+# sensusai AI
 > **"One Lecture. Every Learner."**
 
-InclusiveEd AI is an intelligent accessibility platform designed to convert classroom lectures into adapted, personalized study workspaces for ADHD, dyslexia, ESL, and auditory learners. 
+sensusai AI is an intelligent accessibility platform designed to convert classroom lectures into adapted, personalized study workspaces for ADHD, dyslexia, ESL, and auditory learners. 
 
-By leveraging the Google Gemini API, InclusiveEd AI dynamically processes dense transcripts to generate easy-read notes, native translations, vocabulary tooltips, and interactive comprehension quizzes.
+By leveraging the Google Gemini API, sensusai AI dynamically processes dense transcripts to generate easy-read notes, native translations, vocabulary tooltips, and interactive comprehension quizzes.
 
 ---
 
@@ -15,7 +15,7 @@ Traditional educational lectures create learning barriers:
 * **ESL Learners:** Non-native speakers struggle with advanced technical vocabulary.
 * **Auditory Learners:** Prefer speech narration to reinforce retention.
 
-**InclusiveEd AI** solves this by providing:
+**sensusai AI** solves this by providing:
 1. **Verbatim Transcript:** Interactive highlighting synced with audio/video media.
 2. **Simplified Notes:** Summary decks broken down into short, bulleted concepts.
 3. **Multilingual Localizations:** In-context language translation support.
@@ -47,7 +47,7 @@ Traditional educational lectures create learning barriers:
 ## 📁 Repository Structure
 
 ```
-InclusiveEdAI/
+sensusaiAI/
 ├── src/                      # Frontend React 19 Source Code
 │   ├── components/           # Nav headers, footers, readability controls
 │   ├── context/              # Accessibility settings state, Auth, and Toasts
@@ -75,8 +75,8 @@ InclusiveEdAI/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/InclusiveEdAI.git
-cd InclusiveEdAI
+git clone https://github.com/your-username/sensusaiAI.git
+cd sensusaiAI
 
 # Install client-side dependencies
 npm install

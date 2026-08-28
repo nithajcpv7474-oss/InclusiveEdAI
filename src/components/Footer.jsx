@@ -15,13 +15,13 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-650 to-pink-500 flex items-center justify-center shadow-md">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="text-base font-extrabold text-slate-900 dark:text-white">InclusiveEd AI</span>
+              <span className="text-base font-extrabold text-slate-900 dark:text-white">SensusAI</span>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
               Making learning more accessible, understandable, and inclusive with AI.
             </p>
             <span className="text-[10px] font-black uppercase tracking-widest bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent block pt-1">
-              "One Lecture. Every Learner."
+              SensusAI — Learn Without Limits
             </span>
           </div>
 
@@ -61,7 +61,7 @@ export default function Footer() {
             <span>for inclusive learning.</span>
           </div>
           <div>
-            <span>© 2026 InclusiveEd AI. All rights reserved.</span>
+            <span>© 2026 SensusAI. All rights reserved.</span>
           </div>
         </div>
       </div>

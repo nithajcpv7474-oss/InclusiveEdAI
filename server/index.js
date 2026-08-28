@@ -395,7 +395,7 @@ async function downloadMediaFromUrl(urlStr) {
     method: 'GET',
     redirect: 'follow',
     headers: {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) InclusiveEdAI/1.0'
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) sensusaiAI/1.0'
     }
   });
 
@@ -971,7 +971,7 @@ app.get('/health', (req, res) => {
 // Start the Express server
 app.listen(PORT, () => {
   console.log(`=========================================`);
-  console.log(`InclusiveEd AI Backend Running on Port ${PORT}`);
+  console.log(`sensusai AI Backend Running on Port ${PORT}`);
   console.log(`Health Check: http://localhost:${PORT}/health`);
   console.log(`API Endpoint: http://localhost:${PORT}/api/accessibility/process`);
   console.log(`=========================================`);

@@ -285,7 +285,7 @@ export default function AccessibilityResultPage() {
     if (activeTab === 'simple') {
       const simplifiedText = routeState?.simplifiedText || lectureData.simpleSentences.join(' ');
       filename = `InclusionNotes_EasyRead_${cleanTitle}.txt`;
-      fileContent = `INCLUSIVEED AI - ACCESSIBLE STUDY NOTES (EASY READ)
+      fileContent = `sensusai AI - ACCESSIBLE STUDY NOTES (EASY READ)
 ==================================================
 LECTURE TITLE: ${title}
 TARGET AUDIENCE: ADHD / Cognitive Learning Support
@@ -298,7 +298,7 @@ ${simplifiedText}
       const translatedText = dynamicTranslationText || routeState?.translatedText || (lectureData.translatedSentences[currentTranslationLang] || lectureData.translatedSentences['es']).join(' ');
       const langName = currentTranslationLang.toUpperCase();
       filename = `InclusionNotes_Translation_${langName}_${cleanTitle}.txt`;
-      fileContent = `INCLUSIVEED AI - ACCESSIBLE TRANSLATED TRANSCRIPT (${langName})
+      fileContent = `sensusai AI - ACCESSIBLE TRANSLATED TRANSCRIPT (${langName})
 ==================================================
 LECTURE TITLE: ${title}
 LANGUAGE PROFILE: ESL / Non-Native Speaker Mode
@@ -309,7 +309,7 @@ ${translatedText}
 `;
     } else {
       filename = `InclusionNotes_Verbatim_${cleanTitle}.txt`;
-      fileContent = `INCLUSIVEED AI - ORIGINAL VERBATIM TRANSCRIPT
+      fileContent = `sensusai AI - ORIGINAL VERBATIM TRANSCRIPT
 ==================================================
 LECTURE TITLE: ${title}
 DATE EXPORTED: ${new Date().toLocaleDateString()}
