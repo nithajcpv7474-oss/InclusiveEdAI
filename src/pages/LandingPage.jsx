@@ -124,7 +124,7 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 max-w-md mx-auto">
             <Link
               to="/signup"
-              className="w-full px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl shadow-xl shadow-indigo-650/15 hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2.5 group hover:scale-[1.02]"
+              className="w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-2xl shadow-md transition-all flex items-center justify-center gap-2.5 group cursor-pointer"
             >
               <span>Start Learning</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

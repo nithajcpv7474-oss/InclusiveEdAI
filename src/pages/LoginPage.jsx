@@ -202,7 +202,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-200 dark:disabled:bg-slate-800 text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group hover:scale-[1.01] focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer"
+              className="w-full py-3.5 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] disabled:bg-slate-200 dark:disabled:bg-slate-800 text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group focus-visible:ring-2 focus-visible:ring-indigo-500 focus:outline-none cursor-pointer"
             >
               <span>{loading ? 'Signing In...' : 'Sign In'}</span>
               {!loading && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}

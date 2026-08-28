@@ -235,7 +235,7 @@ export default function SignupPage() {
               <button
                 type="button"
                 onClick={handleNextStep}
-                className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg shadow-indigo-650/10 flex items-center justify-center gap-2 group hover:scale-[1.01]"
+                className="w-full py-4 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <span>Continue to Onboarding</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -308,7 +308,7 @@ export default function SignupPage() {
                 <button
                   type="button"
                   onClick={handleNextStep}
-                  className="flex-1 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5 text-xs uppercase tracking-wider"
+                  className="flex-1 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-1.5 text-xs uppercase tracking-wider cursor-pointer"
                 >
                   <span>Continue</span>
                   <ArrowRight className="w-4 h-4" />
@@ -361,7 +361,7 @@ export default function SignupPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 py-4 bg-indigo-600 hover:bg-indigo-705 text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-xs uppercase tracking-wider group hover:scale-[1.01]"
+                  className="flex-1 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 hover:brightness-110 active:scale-[0.98] text-white font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-xs uppercase tracking-wider group cursor-pointer"
                 >
                   <span>{loading ? 'Creating...' : 'Create Account'}</span>
                   {!loading && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}

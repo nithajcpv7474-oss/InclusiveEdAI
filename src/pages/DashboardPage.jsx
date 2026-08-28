@@ -63,31 +63,31 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 relative z-10">
         
         {/* Dashboard Header Banner */}
-        <div className="bg-gradient-to-tr from-slate-950 via-indigo-950 to-indigo-900 rounded-3xl p-8 sm:p-10 border border-slate-800 text-white relative overflow-hidden shadow-2xl shadow-indigo-950/20 text-left">
-          <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-indigo-500/15 rounded-full blur-[90px]" />
-          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]" />
+        <div className="bg-gradient-to-tr from-indigo-50/50 via-purple-50/20 to-white dark:from-slate-950 dark:via-indigo-950 dark:to-indigo-900 rounded-3xl p-8 sm:p-10 border border-indigo-100/80 dark:border-slate-800 text-slate-900 dark:text-white relative overflow-hidden shadow-sm text-left">
+          <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-indigo-500/10 rounded-full blur-[90px] pointer-events-none" />
+          <div className="absolute bottom-[10%] left-[-10%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
           
           {/* Subtle decorative circles */}
-          <div className="absolute top-8 right-12 w-24 h-24 rounded-full border border-white/5 pointer-events-none" />
-          <div className="absolute bottom-6 right-28 w-16 h-16 rounded-full border border-white/5 pointer-events-none" />
+          <div className="absolute top-8 right-12 w-24 h-24 rounded-full border border-indigo-500/5 pointer-events-none" />
+          <div className="absolute bottom-6 right-28 w-16 h-16 rounded-full border border-indigo-500/5 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-white/10 rounded-full border border-white/15 text-indigo-300 text-[9px] font-black uppercase tracking-widest">
-                <GraduationCap className="w-3.5 h-3.5 text-indigo-400" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 bg-indigo-500/10 dark:bg-white/10 rounded-full border border-indigo-500/20 dark:border-white/15 text-indigo-600 dark:text-indigo-300 text-[9px] font-black uppercase tracking-widest">
+                <GraduationCap className="w-3.5 h-3.5 text-indigo-500" />
                 <span>ACCESSIBILITY DASHBOARD</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+              <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                 Good morning, {user?.name || 'Venky'}
               </h1>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-xl font-semibold">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl font-semibold">
                 Ready to learn your way? Transform lectures into personalized learning experiences.
               </p>
             </div>
             
             <Link
               to="/new-lesson"
-              className="shrink-0 inline-flex items-center gap-2 px-7 py-4 bg-gradient-to-r from-indigo-500 via-purple-600 to-pink-600 hover:from-indigo-600 hover:to-pink-700 text-white text-[10px] font-black uppercase tracking-wider rounded-2xl shadow-lg shadow-indigo-600/25 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+              className="shrink-0 inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-[10px] font-black uppercase tracking-wider rounded-xl shadow-md hover:scale-[1.01] active:scale-[0.98] transition-all cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>+ New Lecture</span>

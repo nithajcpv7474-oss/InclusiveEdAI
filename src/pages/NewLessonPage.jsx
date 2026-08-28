@@ -611,12 +611,12 @@ export default function NewLessonPage() {
       <div className="max-w-4xl mx-auto px-4 py-10 space-y-10 relative z-10">
         
         {/* Header Hero */}
-        <div className="bg-gradient-to-tr from-slate-950 via-indigo-950 to-indigo-900 rounded-3xl p-8 sm:p-10 border border-slate-800 text-white relative overflow-hidden shadow-2xl shadow-indigo-950/20 text-left">
+        <div className="bg-gradient-to-tr from-indigo-50/50 via-purple-50/20 to-white dark:from-slate-950 dark:via-indigo-950 dark:to-indigo-900 rounded-3xl p-8 sm:p-10 border border-indigo-100/80 dark:border-slate-800 text-slate-900 dark:text-white relative overflow-hidden shadow-sm text-left">
           <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] bg-indigo-500/10 rounded-full blur-[80px] pointer-events-none" />
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Create a New Learning Experience
           </h1>
-          <p className="text-xs sm:text-sm text-slate-350 leading-relaxed max-w-xl font-semibold mt-2">
+          <p className="text-xs sm:text-sm text-slate-650 dark:text-slate-300 leading-relaxed max-w-xl font-semibold mt-2">
             Upload classroom files, paste video URLs or paste verbatim transcripts. Let SensusAI transform it into personalized learning content.
           </p>
         </div>
