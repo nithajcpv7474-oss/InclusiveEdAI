@@ -20,6 +20,8 @@ import {
   Trash2
 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function NewLessonPage() {
   const navigate = useNavigate();
   const { addSession } = useAuth();
@@ -239,7 +241,7 @@ export default function NewLessonPage() {
         formData.append('category', lectureCategory || 'Lecture');
         formData.append('language', targetLanguageName);
 
-        const response = await fetch('http://localhost:5000/api/media/process', {
+        const response = await fetch(`${API_URL}/api/media/process`, {
           method: 'POST',
           body: formData
         });
@@ -255,32 +257,32 @@ export default function NewLessonPage() {
 
         // Save session to Auth history
         addSession({
-          title: data.lecture.title,
-          category: data.lecture.category,
-          lang: translationLanguage,
+          title: data.lecture?.title || lectureTitle || selectedFile.name,
+          category: data.lecture?.category || lectureCategory || 'Lecture',
+          lang: selectedLanguageCode,
           profiles: selectedProfiles,
-          mediaType: data.lecture.mediaType,
-          originalText: data.lecture.transcript.fullText,
-          simplifiedText: data.lecture.easyRead,
-          translatedText: data.lecture.translated,
-          segments: data.lecture.transcript.segments,
+          mediaType: data.lecture?.mediaType || 'audio',
+          originalText: data.lecture?.transcript?.fullText || data.original,
+          simplifiedText: data.lecture?.easyRead || data.simplified,
+          translatedText: data.lecture?.translated || data.translated,
+          segments: data.lecture?.transcript?.segments || data.segments || [],
           hasMedia: true,
           mediaName: selectedFile.name
         });
 
-        // Delay so they see the completed state
+        // Transition to Workbench with response state
         setTimeout(() => {
+          setIsSubmitting(false);
           navigate('/result', {
             state: {
-              title: data.lecture.title,
-              category: data.lecture.category,
-              mediaType: data.lecture.mediaType,
-              originalText: data.lecture.transcript.fullText,
-              simplifiedText: data.lecture.easyRead,
-              translatedText: data.lecture.translated,
+              title: data.lecture?.title || lectureTitle || selectedFile.name,
+              category: data.lecture?.category || lectureCategory || 'Lecture',
+              originalText: data.lecture?.transcript?.fullText || data.original,
+              simplifiedText: data.lecture?.easyRead || data.simplified,
+              translatedText: data.lecture?.translated || data.translated,
               profiles: selectedProfiles,
-              lang: translationLanguage,
-              segments: data.lecture.transcript.segments,
+              lang: selectedLanguageCode,
+              segments: data.lecture?.transcript?.segments || data.segments || [],
               hasMedia: true,
               mediaFile: selectedFile
             }
@@ -291,7 +293,7 @@ export default function NewLessonPage() {
         console.error("Media Ingest Error:", err);
         clearInterval(stepTimer);
         setIsSubmitting(false);
-        setFormError(err.message || 'Could not connect to backend server. Please verify Express server is running on http://localhost:5000/');
+        setFormError(err.message || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
         if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
           setIsCooldown(true);
           setTimeout(() => setIsCooldown(false), 10000);
@@ -329,7 +331,7 @@ export default function NewLessonPage() {
         formData.append('category', lectureCategory || 'Lecture');
         formData.append('language', targetLanguageName);
 
-        const response = await fetch('http://localhost:5000/api/media/process', {
+        const response = await fetch(`${API_URL}/api/media/process`, {
           method: 'POST',
           body: formData
         });
@@ -382,7 +384,7 @@ export default function NewLessonPage() {
         console.error("Link Media Ingest Error:", err);
         clearInterval(stepTimer);
         setIsSubmitting(false);
-        setFormError(err.message || 'Could not connect to backend server. Please verify Express server is running on http://localhost:5000/');
+        setFormError(err.message || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
         if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
           setIsCooldown(true);
           setTimeout(() => setIsCooldown(false), 10000);
@@ -425,7 +427,7 @@ export default function NewLessonPage() {
     }, 1000);
 
     try {
-      const response = await fetch('http://localhost:5000/api/accessibility/process', {
+      const response = await fetch(`${API_URL}/api/accessibility/process`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -475,7 +477,7 @@ export default function NewLessonPage() {
       console.error("Ingest Integration Error:", err);
       clearInterval(stepTimer);
       setIsSubmitting(false);
-      setFormError(err.message || 'Could not connect to backend server. Please make sure your server is running on http://localhost:5000/');
+      setFormError(err.message || `Could not connect to backend server. Please verify the server is active at ${API_URL}`);
       if (err.message && (err.message.includes("quota") || err.message.includes("busy") || err.message.includes("limit"))) {
         setIsCooldown(true);
         setTimeout(() => setIsCooldown(false), 10000);

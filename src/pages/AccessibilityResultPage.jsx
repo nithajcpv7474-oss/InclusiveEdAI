@@ -21,6 +21,8 @@ import {
   Download
 } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function AccessibilityResultPage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -227,7 +229,7 @@ export default function AccessibilityResultPage() {
     const targetLanguageName = langMap[selectedLanguageCode] || 'Spanish';
 
     try {
-      const response = await fetch('http://localhost:5000/api/accessibility/process', {
+      const response = await fetch(`${API_URL}/api/accessibility/process`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -369,7 +371,7 @@ ${originalText}
 
     setIsQuizLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/quiz/generate', {
+      const response = await fetch(`${API_URL}/api/quiz/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -429,7 +431,7 @@ ${originalText}
       };
       const targetLanguageName = langMap[selectedLanguageCode] || 'Spanish';
 
-      const response = await fetch('http://localhost:5000/api/accessibility/process', {
+      const response = await fetch(`${API_URL}/api/accessibility/process`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
