@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* System-wide modern fonts */
+  --font-sans: 'Plus Jakarta Sans', 'Lexend', system-ui, -apple-system, sans-serif;
+  --font-display: 'Lexend', system-ui, sans-serif;
+  
+  /* Transition durations for accessibility changes */
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              font-size 0.2s ease;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+.dark .glass-panel {
+  background: rgba(18, 19, 26, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Dyslexia reading styles */
+.dyslexia-mode {
+  font-family: 'Lexend', sans-serif !important;
+  letter-spacing: 0.15em !important;
+  word-spacing: 0.28em !important;
+  line-height: 1.9 !important;
+}
+
+.dyslexia-mode p, 
+.dyslexia-mode span, 
+.dyslexia-mode li, 
+.dyslexia-mode div, 
+.dyslexia-mode h1, 
+.dyslexia-mode h2, 
+.dyslexia-mode h3, 
+.dyslexia-mode h4,
+.dyslexia-mode a {
+  font-family: 'Lexend', sans-serif !important;
+  letter-spacing: 0.15em !important;
+  word-spacing: 0.28em !important;
+  line-height: 1.9 !important;
+}
+
+/* Accessibility Tints */
+.tint-default {
+  background-color: #f8fafc;
+  background-image: radial-gradient(at 0% 0%, rgba(243, 244, 246, 0.5) 0px, transparent 50%),
+                    radial-gradient(at 50% 0%, rgba(238, 242, 255, 0.4) 0px, transparent 50%);
+  color: #0f172a;
+}
+
+.tint-warm {
+  background-color: #fdfbf7 !important;
+  background-image: radial-gradient(at 0% 0%, rgba(253, 246, 227, 0.4) 0px, transparent 50%) !important;
+  color: #2e2615 !important;
+}
+
+.tint-cool {
+  background-color: #f0f4f9 !important;
+  background-image: radial-gradient(at 0% 0%, rgba(224, 231, 255, 0.3) 0px, transparent 50%) !important;
+  color: #172535 !important;
+}
+
+.tint-dark {
+  background-color: #0b0c10 !important;
+  background-image: radial-gradient(at 0% 0%, rgba(29, 27, 38, 0.4) 0px, transparent 50%),
+                    radial-gradient(at 50% 0%, rgba(13, 10, 24, 0.5) 0px, transparent 50%);
+  color: #e2e8f0 !important;
+}
+
+/* Specific component styles adjusted for tints */
+.tint-default .glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.tint-warm .glass-panel {
+  background: rgba(254, 253, 250, 0.8) !important;
+  border-color: rgba(230, 218, 201, 0.7) !important;
+  color: #2e2615 !important;
+}
+
+.tint-cool .glass-panel {
+  background: rgba(245, 248, 252, 0.8) !important;
+  border-color: rgba(210, 220, 230, 0.7) !important;
+  color: #172535 !important;
+}
+
+.tint-dark .glass-panel {
+  background: rgba(18, 19, 26, 0.75) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  color: #e2e8f0 !important;
+}
+
+/* Ambient glow blobs */
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.tint-dark .glow-blob {
+  opacity: 0.22;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Focus indicator for keyboard navigation */
+*:focus-visible {
+  outline: 3px solid #6366f1;
+  outline-offset: 3px;
+}
+
+/* Custom subtle animations */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Glowing outline line */
+@keyframes laser-glow {
+  0%, 100% { filter: drop-shadow(0 0 2px #6366f1) drop-shadow(0 0 4px #6366f1); }
+  50% { filter: drop-shadow(0 0 6px #8b5cf6) drop-shadow(0 0 10px #ec4899); }
+}
+
+.animate-laser {
+  animation: laser-glow 4s ease-in-out infinite;
+}
+
+/* Waveform animation for TTS active state */
+@keyframes voice-wave {
+  0%, 100% { height: 4px; }
+  50% { height: 26px; }
+}
+
+.voice-bar {
+  display: inline-block;
+  width: 3.5px;
+  background-color: currentColor;
+  border-radius: 9999px;
+  animation: voice-wave 1s ease-in-out infinite;
+}
+
+.voice-bar:nth-child(2) { animation-delay: 0.15s; }
+.voice-bar:nth-child(3) { animation-delay: 0.3s; }
+.voice-bar:nth-child(4) { animation-delay: 0.45s; }
+.voice-bar:nth-child(5) { animation-delay: 0.6s; }
+
+/* Ingestion diagram specific path lines */
+.diagram-line-active {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 8s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Accessibility Enhancement Classes */
+.reduced-motion, .reduced-motion *, .reduced-motion *::before, .reduced-motion *::after {
+  animation-delay: -1ms !important;
+  animation-duration: 1ms !important;
+  animation-iteration-count: 1 !important;
+  background-attachment: initial !important;
+  scroll-behavior: auto !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+.large-controls button, 
+.large-controls select, 
+.large-controls input, 
+.large-controls a, 
+.large-controls [role="switch"] {
+  min-height: 44px !important;
+  font-size: 1.05rem !important;
+}
+
+.increased-line-spacing p, 
+.increased-line-spacing span, 
+.increased-line-spacing div {
+  line-height: 2.2 !important;
+}
+
+.increased-letter-spacing p, 
+.increased-letter-spacing span, 
+.increased-letter-spacing div {
+  letter-spacing: 0.15em !important;
+}
+
+.high-contrast {
+  filter: contrast(1.2) !important;
+}
