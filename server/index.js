@@ -968,11 +968,15 @@ app.get('/health', (req, res) => {
   res.json({ status: "healthy", timestamp: new Date().toISOString() });
 });
 
-// Start the Express server
-app.listen(PORT, () => {
-  console.log(`=========================================`);
-  console.log(`sensusai AI Backend Running on Port ${PORT}`);
-  console.log(`Health Check: http://localhost:${PORT}/health`);
-  console.log(`API Endpoint: http://localhost:${PORT}/api/accessibility/process`);
-  console.log(`=========================================`);
-});
+// Start the Express server only if not in a Vercel serverless environment
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`=========================================`);
+    console.log(`sensusai AI Backend Running on Port ${PORT}`);
+    console.log(`Health Check: http://localhost:${PORT}/health`);
+    console.log(`API Endpoint: http://localhost:${PORT}/api/accessibility/process`);
+    console.log(`=========================================`);
+  });
+}
+
+export default app;
