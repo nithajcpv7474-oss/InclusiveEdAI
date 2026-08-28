@@ -28,6 +28,7 @@ The SensusAI workspace has been fully overhauled. We have introduced a premium v
 ### 5. Advanced Frontend Error Handling
 * **Failed to Fetch Interceptor:** Added connection status interceptors inside [`NewLessonPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/NewLessonPage.jsx) and [`AccessibilityResultPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/AccessibilityResultPage.jsx) to intercept browser `Failed to Fetch` network exceptions.
 * **Helpful Error Messages:** The UI now displays a detailed explanation instructing the user on how to resolve the network block (by checking their local connection, ensuring local backend server is running on port 5000, or performing a Hard Reload `Ctrl+F5` to clear browser cache on Vercel).
+* **Bypassed Environment Caching:** Hardcoded `API_URL = ''` in frontend pages so that Vite builds never accidentally bake old `VITE_API_URL` localhost environment variables in production.
 
 ### 6. Creation Studio Page (New Lecture)
 * **Visual Header:** Rewrote [`NewLessonPage.jsx`](file:///c:/Users/avulu/OneDrive/Desktop/InclusiveEdAI/src/pages/NewLessonPage.jsx) heading section to use a premium, light-mode gradient banner.

@@ -504,6 +504,59 @@ app.post('/api/media/process', upload.single('media'), async (req, res) => {
     const { title, category, language } = req.body;
     targetLanguage = language || 'Spanish';
 
+    const apiKey = process.env.GEMINI_API_KEY;
+    const isMockMode = !apiKey || apiKey === 'your_gemini_api_key_here' || apiKey.trim() === '';
+
+    if (isMockMode) {
+      console.log("[MEDIA] Running in Mock Mode because GEMINI_API_KEY is not configured.");
+      
+      // Clean up req.file if it exists
+      if (req.file) {
+        try { fs.unlinkSync(req.file.path); } catch (e) {}
+      }
+
+      // Determine titles & details
+      let resolvedTitle = title || (req.file ? req.file.originalname : 'Media Lecture');
+      let isVideo = false;
+      let transcriptText = "This is a simulated transcript generated in Mock Mode. Photosynthesis is a chemical process that occurs in plants, algae, and some bacteria, converting light energy into chemical energy (glucose) using carbon dioxide and water.";
+      let segments = [
+        { id: 1, start: 0, end: 4.5, text: "Photosynthesis is a chemical process that occurs in plants." },
+        { id: 2, start: 4.5, end: 10.2, text: "It converts light energy into chemical energy using carbon dioxide and water." }
+      ];
+
+      if (req.body.url) {
+        const isYT = req.body.url.includes('youtube.com') || req.body.url.includes('youtu.be');
+        resolvedTitle = title || (isYT ? "Introduction to Artificial Intelligence" : "Remote Media File");
+        isVideo = isYT;
+        if (isYT) {
+          transcriptText = "Artificial Intelligence, or AI, is a branch of computer science that focuses on creating systems that can perform tasks that normally require human intelligence. AI can recognize patterns, understand language, learn from data, and help solve problems. Machine Learning is a part of AI that allows computers to learn from data instead of being explicitly programmed for every task.";
+          segments = [
+            { id: 1, start: 0, end: 6.8, text: "Artificial Intelligence, or AI, is a branch of computer science." },
+            { id: 2, start: 6.8, end: 14.5, text: "It focuses on creating systems that can perform tasks that require human intelligence." },
+            { id: 3, start: 14.5, end: 22.0, text: "AI can recognize patterns, understand language, and learn from data." }
+          ];
+        }
+      }
+
+      return res.json({
+        success: true,
+        lecture: {
+          id: `lecture-${Date.now()}`,
+          title: resolvedTitle,
+          category: category || 'Lecture',
+          mediaType: isVideo ? 'video' : 'audio',
+          duration: segments[segments.length - 1].end,
+          detectedLanguage: 'en',
+          transcript: {
+            fullText: transcriptText,
+            segments: segments
+          },
+          easyRead: "### Key Study Guide Notes (Mock Mode)\n\n* **Artificial Intelligence (AI):** A branch of computer science focused on creating systems that perform human-like tasks (e.g. pattern recognition, reasoning, problem solving).\n* **Machine Learning (ML):** A subset of AI enabling computers to learn dynamically from data instead of being manually programmed.\n* **Use Cases:** AI is widely adopted across healthcare, transit systems, recommendation algorithms, and classroom accessibility systems.",
+          translated: "### Notas clave de estudio (Modo de demostración)\n\n* **Inteligencia Artificial (IA):** Una rama de la informática dedicada a crear sistemas que realicen tareas humanas.\n* **Aprendizaje Automático (ML):** Una parte de la IA que permite a las computadoras aprender de los datos."
+        }
+      });
+    }
+
     // 1. Detect and parse YouTube/Shorts URLs
     if (req.body.url) {
       const parsedUrl = new URL(req.body.url);
