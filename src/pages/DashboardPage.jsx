@@ -86,6 +86,56 @@ export default function DashboardPage() {
         </div>
       </div>
 
+      {/* Workflow & Core capabilities */}
+      <div className="space-y-6 text-left">
+        <div className="space-y-1.5">
+          <span className="text-[10px] font-black text-indigo-650 dark:text-indigo-400 uppercase tracking-widest block">Core capabilities</span>
+          <h2 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">Your Adaptive Learning Workspace</h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/50 dark:border-slate-800 shadow-sm space-y-4 hover:scale-[1.01] hover:shadow-md transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+              <Volume2 className="w-5 h-5" />
+            </div>
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-850 dark:text-white">HEAR IT</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
+              Synchronized audio narration and interactive highlighted captions.
+            </p>
+          </div>
+
+          <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/50 dark:border-slate-800 shadow-sm space-y-4 hover:scale-[1.01] hover:shadow-md transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-teal-500/10 text-teal-650 dark:text-teal-400 flex items-center justify-center">
+              <BookOpen className="w-5 h-5" />
+            </div>
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-850 dark:text-white">READ IT</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
+              Dyslexia Lexend overlays and ADHD-friendly bionic focal text.
+            </p>
+          </div>
+
+          <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/50 dark:border-slate-800 shadow-sm space-y-4 hover:scale-[1.01] hover:shadow-md transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-purple-500/10 text-purple-650 dark:text-purple-400 flex items-center justify-center">
+              <Layers className="w-5 h-5" />
+            </div>
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-850 dark:text-white">UNDERSTAND IT</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
+              AI-generated bullet summaries and interactive multiple-choice quizzes.
+            </p>
+          </div>
+
+          <div className="bg-white/80 dark:bg-slate-900/80 rounded-3xl p-6 border border-slate-200/50 dark:border-slate-800 shadow-sm space-y-4 hover:scale-[1.01] hover:shadow-md transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-pink-500/10 text-pink-650 dark:text-pink-400 flex items-center justify-center">
+              <Languages className="w-5 h-5" />
+            </div>
+            <h3 className="text-xs font-black uppercase tracking-wider text-slate-850 dark:text-white">TRANSLATE IT</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed font-semibold">
+              Multi-language study localizations for international ESL support.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Analytics & Footprint Section */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Statistics list */}

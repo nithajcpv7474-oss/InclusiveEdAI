@@ -107,7 +107,7 @@ export default function LandingPage() {
         <div className="text-center space-y-8 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 rounded-full border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-black uppercase tracking-widest animate-pulse-slow">
             <Sparkles className="w-4 h-4 animate-spin-slow" />
-            <span>InclusiveEd AI Startup Engine</span>
+            <span>Inclusive learning, powered by AI</span>
           </div>
           
           <h1 className="text-5xl sm:text-8xl font-black tracking-tight text-slate-900 dark:text-white leading-none">

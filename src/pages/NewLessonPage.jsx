@@ -935,9 +935,9 @@ export default function NewLessonPage() {
           <button
             type="submit"
             disabled={isCooldown}
-            className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-750 disabled:bg-slate-400 dark:disabled:bg-slate-800 disabled:cursor-not-allowed disabled:scale-100 text-white font-bold rounded-2xl shadow-xl shadow-indigo-650/15 hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group hover:scale-[1.02]"
+            className="w-full sm:w-auto px-8 py-4 bg-indigo-600 hover:bg-indigo-750 disabled:bg-slate-400 dark:disabled:bg-slate-800 disabled:cursor-not-allowed disabled:scale-100 text-white font-bold rounded-2xl shadow-xl shadow-indigo-650/15 hover:shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 group hover:scale-[1.02] cursor-pointer"
           >
-            <span>{isCooldown ? 'Quota Reached - Wait...' : 'Transform Lecture'}</span>
+            <span>{isCooldown ? 'Quota Reached - Wait...' : 'Make this lesson accessible'}</span>
             {!isCooldown && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
           </button>
         </div>
